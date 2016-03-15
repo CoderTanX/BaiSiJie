@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TAXRecommendViewController">
+            <connections>
+                <outlet property="categoryTableView" destination="7QB-Oy-Xhw" id="xAK-w6-DWR"/>
+                <outlet property="userTableView" destination="BK1-h5-dDh" id="cj7-ca-WcA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7QB-Oy-Xhw">
+                    <rect key="frame" x="0.0" y="0.0" width="70" height="568"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="xau-TA-9hf"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="WFj-LD-88v"/>
+                        <outlet property="delegate" destination="-1" id="Fmt-bP-wbt"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BK1-h5-dDh">
+                    <rect key="frame" x="70" y="0.0" width="250" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Zby-j1-NXs"/>
+                        <outlet property="delegate" destination="-1" id="7Az-Ta-1VV"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="7QB-Oy-Xhw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="50u-Qo-qxI"/>
+                <constraint firstItem="BK1-h5-dDh" firstAttribute="leading" secondItem="7QB-Oy-Xhw" secondAttribute="trailing" id="A9P-Ng-xSj"/>
+                <constraint firstAttribute="bottom" secondItem="BK1-h5-dDh" secondAttribute="bottom" id="GUm-ca-AmG"/>
+                <constraint firstItem="BK1-h5-dDh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QhV-eI-Wz6"/>
+                <constraint firstItem="7QB-Oy-Xhw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Sro-uR-sVp"/>
+                <constraint firstAttribute="trailing" secondItem="BK1-h5-dDh" secondAttribute="trailing" id="hZ7-8H-KeM"/>
+                <constraint firstAttribute="bottom" secondItem="7QB-Oy-Xhw" secondAttribute="bottom" id="nAj-Fo-Ui3"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="-140" y="84"/>
+        </view>
+    </objects>
+</document>

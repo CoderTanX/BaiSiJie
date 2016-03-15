@@ -1,0 +1,30 @@
+//
+//  PrefixHeader.pch
+//  BaiSiJie
+//
+//  Created by 谭安溪 on 16/3/6.
+//  Copyright © 2016年 谭安溪. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "UIView+TAXAdditions.h"
+#import "UIBarButtonItem+TAXAdditions.h"
+
+#define TAXRGBColor(r,g,b) [UIColor colorWithRed:(r)/255. green:(g)/255. blue:(b)/255. alpha:1]
+#define TAXGlobalBg  TAXRGBColor(233,233,233)
+
+#ifdef DEBUG
+#define TAXLog(...) NSLog(__VA_ARGS__)
+#else
+#define TAXLog(...)
+#endif
+
+#define TAXLogFunc TAXLog(@"%s",__func__)
+
+#define TAXWeakSelf __weak typeof(self)weakSelf = self;
+
+#define SERVICE_URL @"http://api.budejie.com/api/api_open.php"
+
+#endif /* PrefixHeader_pch */

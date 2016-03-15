@@ -1,0 +1,969 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB0F06231C8FD37C0073979B /* TAXRecommendUser.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0F06221C8FD37C0073979B /* TAXRecommendUser.m */; };
+		DB0F06271C8FECCF0073979B /* TAXRecommendUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0F06251C8FECCF0073979B /* TAXRecommendUserCell.m */; };
+		DB0F06281C8FECCF0073979B /* TAXRecommendUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB0F06261C8FECCF0073979B /* TAXRecommendUserCell.xib */; };
+		DB173D111C9654C500691150 /* TAXRecommendTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB173D101C9654C500691150 /* TAXRecommendTagViewController.m */; };
+		DB173D141C96571500691150 /* TAXRecommendTag.m in Sources */ = {isa = PBXBuildFile; fileRef = DB173D131C96571500691150 /* TAXRecommendTag.m */; };
+		DB173D181C965B7A00691150 /* TAXRecommendTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB173D161C965B7A00691150 /* TAXRecommendTagCell.m */; };
+		DB173D191C965B7A00691150 /* TAXRecommendTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB173D171C965B7A00691150 /* TAXRecommendTagCell.xib */; };
+		DB173D221C966B3800691150 /* TAXLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB173D201C966B3800691150 /* TAXLoginRegisterViewController.m */; };
+		DB173D231C966B3800691150 /* TAXLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB173D211C966B3800691150 /* TAXLoginRegisterViewController.xib */; };
+		DB173D261C9686A900691150 /* TAXVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DB173D251C9686A900691150 /* TAXVerticalButton.m */; };
+		DB173D291C96A93C00691150 /* TAXTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DB173D281C96A93C00691150 /* TAXTextField.m */; };
+		DB5BEB951C97A39500269E4C /* TAXPushGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5BEB941C97A39500269E4C /* TAXPushGuideView.m */; };
+		DB5BEB971C97A3A100269E4C /* TAXPushGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB5BEB961C97A3A100269E4C /* TAXPushGuideView.xib */; };
+		DB5C93DD1C8C0DB8004A6E93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5C93DC1C8C0DB8004A6E93 /* main.m */; };
+		DB5C93E81C8C0DB8004A6E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB5C93E71C8C0DB8004A6E93 /* Assets.xcassets */; };
+		DB5C93F61C8C0DB8004A6E93 /* BaiSiJieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5C93F51C8C0DB8004A6E93 /* BaiSiJieTests.m */; };
+		DB5C94011C8C0DB8004A6E93 /* BaiSiJieUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5C94001C8C0DB8004A6E93 /* BaiSiJieUITests.m */; };
+		DB85E0591C8EA95400CB911F /* TAXRecommendCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85E0571C8EA95400CB911F /* TAXRecommendCategoryCell.m */; };
+		DB85E05A1C8EA95400CB911F /* TAXRecommendCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB85E0581C8EA95400CB911F /* TAXRecommendCategoryCell.xib */; };
+		DB85E05D1C8EAAE800CB911F /* TAXRecommendCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85E05C1C8EAAE800CB911F /* TAXRecommendCategory.m */; };
+		DB96CA671C8E72A4009020D6 /* TAXRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96CA651C8E72A4009020D6 /* TAXRecommendViewController.m */; };
+		DB96CA681C8E72A4009020D6 /* TAXRecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB96CA661C8E72A4009020D6 /* TAXRecommendViewController.xib */; };
+		DB96CA6A1C8E8473009020D6 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96CA691C8E8473009020D6 /* Foundation+Log.m */; };
+		DB96CA711C8E8699009020D6 /* GGNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96CA701C8E8699009020D6 /* GGNetworking.m */; };
+		DB96CA801C8E86C5009020D6 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96CA751C8E86C5009020D6 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DB96CA811C8E86C5009020D6 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96CA771C8E86C5009020D6 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DB96CA821C8E86C5009020D6 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96CA791C8E86C5009020D6 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DB96CA831C8E86C5009020D6 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96CA7B1C8E86C5009020D6 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DB96CA841C8E86C5009020D6 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96CA7D1C8E86C5009020D6 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DB96CA851C8E86C5009020D6 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96CA7F1C8E86C5009020D6 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DBEBCA6A1C92A573007C0D49 /* UINavigationController+Consistent.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEBCA691C92A573007C0D49 /* UINavigationController+Consistent.m */; };
+		DBED8B8B1C8D22DF0004B9FD /* TAXEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBED8B681C8D22DF0004B9FD /* TAXEssenceViewController.m */; };
+		DBED8B8C1C8D22DF0004B9FD /* TAXFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBED8B6E1C8D22DF0004B9FD /* TAXFriendTrendsViewController.m */; };
+		DBED8B8D1C8D22DF0004B9FD /* TAXMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBED8B741C8D22DF0004B9FD /* TAXMeViewController.m */; };
+		DBED8B8E1C8D22DF0004B9FD /* TAXNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBED8B7A1C8D22DF0004B9FD /* TAXNewViewController.m */; };
+		DBED8B8F1C8D22DF0004B9FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBED8B7F1C8D22DF0004B9FD /* AppDelegate.m */; };
+		DBED8B901C8D22DF0004B9FD /* UIBarButtonItem+TAXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DBED8B821C8D22DF0004B9FD /* UIBarButtonItem+TAXAdditions.m */; };
+		DBED8B911C8D22DF0004B9FD /* UIView+TAXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DBED8B841C8D22DF0004B9FD /* UIView+TAXAdditions.m */; };
+		DBED8B921C8D22DF0004B9FD /* TAXTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBED8B871C8D22DF0004B9FD /* TAXTabBarController.m */; };
+		DBED8B931C8D22DF0004B9FD /* TAXTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DBED8B8A1C8D22DF0004B9FD /* TAXTabBar.m */; };
+		DBED8B961C8D2BF10004B9FD /* TAXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBED8B951C8D2BF10004B9FD /* TAXNavigationController.m */; };
+		DBFDB7B31C8D7F8000B2BE8C /* TAXFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBFDB7B21C8D7F8000B2BE8C /* TAXFriendTrendsViewController.xib */; };
+		E17EDE02D3D095F1C1410ACC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D902A3880D0A5BBC32EFF6E /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB5C93F21C8C0DB8004A6E93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB5C93D01C8C0DB8004A6E93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB5C93D71C8C0DB8004A6E93;
+			remoteInfo = BaiSiJie;
+		};
+		DB5C93FD1C8C0DB8004A6E93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB5C93D01C8C0DB8004A6E93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB5C93D71C8C0DB8004A6E93;
+			remoteInfo = BaiSiJie;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6D902A3880D0A5BBC32EFF6E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		73E0E34C3F2B0DE1864965D6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7E229A9B79B41C97E1D8448E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DB0F06211C8FD37C0073979B /* TAXRecommendUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXRecommendUser.h; sourceTree = "<group>"; };
+		DB0F06221C8FD37C0073979B /* TAXRecommendUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXRecommendUser.m; sourceTree = "<group>"; };
+		DB0F06241C8FECCF0073979B /* TAXRecommendUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXRecommendUserCell.h; sourceTree = "<group>"; };
+		DB0F06251C8FECCF0073979B /* TAXRecommendUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXRecommendUserCell.m; sourceTree = "<group>"; };
+		DB0F06261C8FECCF0073979B /* TAXRecommendUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXRecommendUserCell.xib; sourceTree = "<group>"; };
+		DB173D0F1C9654C500691150 /* TAXRecommendTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXRecommendTagViewController.h; sourceTree = "<group>"; };
+		DB173D101C9654C500691150 /* TAXRecommendTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXRecommendTagViewController.m; sourceTree = "<group>"; };
+		DB173D121C96571500691150 /* TAXRecommendTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXRecommendTag.h; sourceTree = "<group>"; };
+		DB173D131C96571500691150 /* TAXRecommendTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXRecommendTag.m; sourceTree = "<group>"; };
+		DB173D151C965B7A00691150 /* TAXRecommendTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXRecommendTagCell.h; sourceTree = "<group>"; };
+		DB173D161C965B7A00691150 /* TAXRecommendTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXRecommendTagCell.m; sourceTree = "<group>"; };
+		DB173D171C965B7A00691150 /* TAXRecommendTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXRecommendTagCell.xib; sourceTree = "<group>"; };
+		DB173D1F1C966B3800691150 /* TAXLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXLoginRegisterViewController.h; sourceTree = "<group>"; };
+		DB173D201C966B3800691150 /* TAXLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXLoginRegisterViewController.m; sourceTree = "<group>"; };
+		DB173D211C966B3800691150 /* TAXLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXLoginRegisterViewController.xib; sourceTree = "<group>"; };
+		DB173D241C9686A900691150 /* TAXVerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXVerticalButton.h; sourceTree = "<group>"; };
+		DB173D251C9686A900691150 /* TAXVerticalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXVerticalButton.m; sourceTree = "<group>"; };
+		DB173D271C96A93C00691150 /* TAXTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXTextField.h; sourceTree = "<group>"; };
+		DB173D281C96A93C00691150 /* TAXTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXTextField.m; sourceTree = "<group>"; };
+		DB5BEB931C97A39500269E4C /* TAXPushGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXPushGuideView.h; sourceTree = "<group>"; };
+		DB5BEB941C97A39500269E4C /* TAXPushGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXPushGuideView.m; sourceTree = "<group>"; };
+		DB5BEB961C97A3A100269E4C /* TAXPushGuideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXPushGuideView.xib; sourceTree = "<group>"; };
+		DB5C93D81C8C0DB8004A6E93 /* BaiSiJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiSiJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB5C93DC1C8C0DB8004A6E93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB5C93E71C8C0DB8004A6E93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB5C93EC1C8C0DB8004A6E93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB5C93F11C8C0DB8004A6E93 /* BaiSiJieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaiSiJieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB5C93F51C8C0DB8004A6E93 /* BaiSiJieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaiSiJieTests.m; sourceTree = "<group>"; };
+		DB5C93F71C8C0DB8004A6E93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB5C93FC1C8C0DB8004A6E93 /* BaiSiJieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaiSiJieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB5C94001C8C0DB8004A6E93 /* BaiSiJieUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaiSiJieUITests.m; sourceTree = "<group>"; };
+		DB5C94021C8C0DB8004A6E93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB5C94241C8C7436004A6E93 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		DB85E0561C8EA95400CB911F /* TAXRecommendCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXRecommendCategoryCell.h; sourceTree = "<group>"; };
+		DB85E0571C8EA95400CB911F /* TAXRecommendCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXRecommendCategoryCell.m; sourceTree = "<group>"; };
+		DB85E0581C8EA95400CB911F /* TAXRecommendCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXRecommendCategoryCell.xib; sourceTree = "<group>"; };
+		DB85E05B1C8EAAE800CB911F /* TAXRecommendCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXRecommendCategory.h; sourceTree = "<group>"; };
+		DB85E05C1C8EAAE800CB911F /* TAXRecommendCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXRecommendCategory.m; sourceTree = "<group>"; };
+		DB96CA641C8E72A4009020D6 /* TAXRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXRecommendViewController.h; sourceTree = "<group>"; };
+		DB96CA651C8E72A4009020D6 /* TAXRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXRecommendViewController.m; sourceTree = "<group>"; };
+		DB96CA661C8E72A4009020D6 /* TAXRecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXRecommendViewController.xib; sourceTree = "<group>"; };
+		DB96CA691C8E8473009020D6 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		DB96CA6F1C8E8699009020D6 /* GGNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGNetworking.h; sourceTree = "<group>"; };
+		DB96CA701C8E8699009020D6 /* GGNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGNetworking.m; sourceTree = "<group>"; };
+		DB96CA731C8E86C5009020D6 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		DB96CA741C8E86C5009020D6 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		DB96CA751C8E86C5009020D6 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		DB96CA761C8E86C5009020D6 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		DB96CA771C8E86C5009020D6 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		DB96CA781C8E86C5009020D6 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		DB96CA791C8E86C5009020D6 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		DB96CA7A1C8E86C5009020D6 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		DB96CA7B1C8E86C5009020D6 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		DB96CA7C1C8E86C5009020D6 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		DB96CA7D1C8E86C5009020D6 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		DB96CA7E1C8E86C5009020D6 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		DB96CA7F1C8E86C5009020D6 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		DBEBCA681C92A573007C0D49 /* UINavigationController+Consistent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Consistent.h"; sourceTree = "<group>"; };
+		DBEBCA691C92A573007C0D49 /* UINavigationController+Consistent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Consistent.m"; sourceTree = "<group>"; };
+		DBED8B671C8D22DF0004B9FD /* TAXEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXEssenceViewController.h; sourceTree = "<group>"; };
+		DBED8B681C8D22DF0004B9FD /* TAXEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXEssenceViewController.m; sourceTree = "<group>"; };
+		DBED8B6D1C8D22DF0004B9FD /* TAXFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXFriendTrendsViewController.h; sourceTree = "<group>"; };
+		DBED8B6E1C8D22DF0004B9FD /* TAXFriendTrendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXFriendTrendsViewController.m; sourceTree = "<group>"; };
+		DBED8B731C8D22DF0004B9FD /* TAXMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXMeViewController.h; sourceTree = "<group>"; };
+		DBED8B741C8D22DF0004B9FD /* TAXMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXMeViewController.m; sourceTree = "<group>"; };
+		DBED8B791C8D22DF0004B9FD /* TAXNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXNewViewController.h; sourceTree = "<group>"; };
+		DBED8B7A1C8D22DF0004B9FD /* TAXNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXNewViewController.m; sourceTree = "<group>"; };
+		DBED8B7E1C8D22DF0004B9FD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DBED8B7F1C8D22DF0004B9FD /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DBED8B811C8D22DF0004B9FD /* UIBarButtonItem+TAXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+TAXAdditions.h"; sourceTree = "<group>"; };
+		DBED8B821C8D22DF0004B9FD /* UIBarButtonItem+TAXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+TAXAdditions.m"; sourceTree = "<group>"; };
+		DBED8B831C8D22DF0004B9FD /* UIView+TAXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TAXAdditions.h"; sourceTree = "<group>"; };
+		DBED8B841C8D22DF0004B9FD /* UIView+TAXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TAXAdditions.m"; sourceTree = "<group>"; };
+		DBED8B861C8D22DF0004B9FD /* TAXTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXTabBarController.h; sourceTree = "<group>"; };
+		DBED8B871C8D22DF0004B9FD /* TAXTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXTabBarController.m; sourceTree = "<group>"; };
+		DBED8B891C8D22DF0004B9FD /* TAXTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXTabBar.h; sourceTree = "<group>"; };
+		DBED8B8A1C8D22DF0004B9FD /* TAXTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXTabBar.m; sourceTree = "<group>"; };
+		DBED8B941C8D2BF10004B9FD /* TAXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXNavigationController.h; sourceTree = "<group>"; };
+		DBED8B951C8D2BF10004B9FD /* TAXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXNavigationController.m; sourceTree = "<group>"; };
+		DBFDB7B21C8D7F8000B2BE8C /* TAXFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXFriendTrendsViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB5C93D51C8C0DB8004A6E93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E17EDE02D3D095F1C1410ACC /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB5C93EE1C8C0DB8004A6E93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB5C93F91C8C0DB8004A6E93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B99E3ADBCB8522F3E41EAA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E229A9B79B41C97E1D8448E /* Pods.debug.xcconfig */,
+				73E0E34C3F2B0DE1864965D6 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8674C683ED8E0797C1DD2971 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D902A3880D0A5BBC32EFF6E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB5C93CF1C8C0DB8004A6E93 = {
+			isa = PBXGroup;
+			children = (
+				DB5C93DA1C8C0DB8004A6E93 /* BaiSiJie */,
+				DB5C93F41C8C0DB8004A6E93 /* BaiSiJieTests */,
+				DB5C93FF1C8C0DB8004A6E93 /* BaiSiJieUITests */,
+				DB5C93D91C8C0DB8004A6E93 /* Products */,
+				0B99E3ADBCB8522F3E41EAA9 /* Pods */,
+				8674C683ED8E0797C1DD2971 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DB5C93D91C8C0DB8004A6E93 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB5C93D81C8C0DB8004A6E93 /* BaiSiJie.app */,
+				DB5C93F11C8C0DB8004A6E93 /* BaiSiJieTests.xctest */,
+				DB5C93FC1C8C0DB8004A6E93 /* BaiSiJieUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB5C93DA1C8C0DB8004A6E93 /* BaiSiJie */ = {
+			isa = PBXGroup;
+			children = (
+				DBED8B641C8D22DF0004B9FD /* Classes */,
+				DB5C93DB1C8C0DB8004A6E93 /* Supporting Files */,
+			);
+			path = BaiSiJie;
+			sourceTree = "<group>";
+		};
+		DB5C93DB1C8C0DB8004A6E93 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB5C94241C8C7436004A6E93 /* PrefixHeader.pch */,
+				DB5C93E71C8C0DB8004A6E93 /* Assets.xcassets */,
+				DB5C93EC1C8C0DB8004A6E93 /* Info.plist */,
+				DB5C93DC1C8C0DB8004A6E93 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB5C93F41C8C0DB8004A6E93 /* BaiSiJieTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB5C93F51C8C0DB8004A6E93 /* BaiSiJieTests.m */,
+				DB5C93F71C8C0DB8004A6E93 /* Info.plist */,
+			);
+			path = BaiSiJieTests;
+			sourceTree = "<group>";
+		};
+		DB5C93FF1C8C0DB8004A6E93 /* BaiSiJieUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DB5C94001C8C0DB8004A6E93 /* BaiSiJieUITests.m */,
+				DB5C94021C8C0DB8004A6E93 /* Info.plist */,
+			);
+			path = BaiSiJieUITests;
+			sourceTree = "<group>";
+		};
+		DB96CA6E1C8E8699009020D6 /* GGNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				DB96CA6F1C8E8699009020D6 /* GGNetworking.h */,
+				DB96CA701C8E8699009020D6 /* GGNetworking.m */,
+			);
+			path = GGNetworking;
+			sourceTree = "<group>";
+		};
+		DB96CA721C8E86C5009020D6 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				DB96CA731C8E86C5009020D6 /* JSON.h */,
+				DB96CA741C8E86C5009020D6 /* NSObject+SBJSON.h */,
+				DB96CA751C8E86C5009020D6 /* NSObject+SBJSON.m */,
+				DB96CA761C8E86C5009020D6 /* NSString+SBJSON.h */,
+				DB96CA771C8E86C5009020D6 /* NSString+SBJSON.m */,
+				DB96CA781C8E86C5009020D6 /* SBJSON.h */,
+				DB96CA791C8E86C5009020D6 /* SBJSON.m */,
+				DB96CA7A1C8E86C5009020D6 /* SBJsonBase.h */,
+				DB96CA7B1C8E86C5009020D6 /* SBJsonBase.m */,
+				DB96CA7C1C8E86C5009020D6 /* SBJsonParser.h */,
+				DB96CA7D1C8E86C5009020D6 /* SBJsonParser.m */,
+				DB96CA7E1C8E86C5009020D6 /* SBJsonWriter.h */,
+				DB96CA7F1C8E86C5009020D6 /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		DBED8B641C8D22DF0004B9FD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DBED8B651C8D22DF0004B9FD /* Essence(精华) */,
+				DBED8B771C8D22DF0004B9FD /* New(新帖) */,
+				DBED8B6B1C8D22DF0004B9FD /* FriendTrends(关注) */,
+				DBED8B711C8D22DF0004B9FD /* Me(我) */,
+				DBED8B7D1C8D22DF0004B9FD /* Other(其他) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		DBED8B651C8D22DF0004B9FD /* Essence(精华) */ = {
+			isa = PBXGroup;
+			children = (
+				DBED8B661C8D22DF0004B9FD /* Controller */,
+				DBED8B691C8D22DF0004B9FD /* Model */,
+				DBED8B6A1C8D22DF0004B9FD /* View */,
+			);
+			path = "Essence(精华)";
+			sourceTree = "<group>";
+		};
+		DBED8B661C8D22DF0004B9FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DBED8B671C8D22DF0004B9FD /* TAXEssenceViewController.h */,
+				DBED8B681C8D22DF0004B9FD /* TAXEssenceViewController.m */,
+				DB173D0F1C9654C500691150 /* TAXRecommendTagViewController.h */,
+				DB173D101C9654C500691150 /* TAXRecommendTagViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DBED8B691C8D22DF0004B9FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB173D121C96571500691150 /* TAXRecommendTag.h */,
+				DB173D131C96571500691150 /* TAXRecommendTag.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DBED8B6A1C8D22DF0004B9FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB173D151C965B7A00691150 /* TAXRecommendTagCell.h */,
+				DB173D161C965B7A00691150 /* TAXRecommendTagCell.m */,
+				DB173D171C965B7A00691150 /* TAXRecommendTagCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DBED8B6B1C8D22DF0004B9FD /* FriendTrends(关注) */ = {
+			isa = PBXGroup;
+			children = (
+				DBED8B6C1C8D22DF0004B9FD /* Controller */,
+				DBED8B6F1C8D22DF0004B9FD /* Model */,
+				DBED8B701C8D22DF0004B9FD /* View */,
+			);
+			path = "FriendTrends(关注)";
+			sourceTree = "<group>";
+		};
+		DBED8B6C1C8D22DF0004B9FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DBED8B6D1C8D22DF0004B9FD /* TAXFriendTrendsViewController.h */,
+				DBED8B6E1C8D22DF0004B9FD /* TAXFriendTrendsViewController.m */,
+				DBFDB7B21C8D7F8000B2BE8C /* TAXFriendTrendsViewController.xib */,
+				DB96CA641C8E72A4009020D6 /* TAXRecommendViewController.h */,
+				DB96CA651C8E72A4009020D6 /* TAXRecommendViewController.m */,
+				DB96CA661C8E72A4009020D6 /* TAXRecommendViewController.xib */,
+				DB173D1F1C966B3800691150 /* TAXLoginRegisterViewController.h */,
+				DB173D201C966B3800691150 /* TAXLoginRegisterViewController.m */,
+				DB173D211C966B3800691150 /* TAXLoginRegisterViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DBED8B6F1C8D22DF0004B9FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB85E05B1C8EAAE800CB911F /* TAXRecommendCategory.h */,
+				DB85E05C1C8EAAE800CB911F /* TAXRecommendCategory.m */,
+				DB0F06211C8FD37C0073979B /* TAXRecommendUser.h */,
+				DB0F06221C8FD37C0073979B /* TAXRecommendUser.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DBED8B701C8D22DF0004B9FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB173D241C9686A900691150 /* TAXVerticalButton.h */,
+				DB173D251C9686A900691150 /* TAXVerticalButton.m */,
+				DB85E0561C8EA95400CB911F /* TAXRecommendCategoryCell.h */,
+				DB85E0571C8EA95400CB911F /* TAXRecommendCategoryCell.m */,
+				DB85E0581C8EA95400CB911F /* TAXRecommendCategoryCell.xib */,
+				DB0F06241C8FECCF0073979B /* TAXRecommendUserCell.h */,
+				DB0F06251C8FECCF0073979B /* TAXRecommendUserCell.m */,
+				DB0F06261C8FECCF0073979B /* TAXRecommendUserCell.xib */,
+				DB173D271C96A93C00691150 /* TAXTextField.h */,
+				DB173D281C96A93C00691150 /* TAXTextField.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DBED8B711C8D22DF0004B9FD /* Me(我) */ = {
+			isa = PBXGroup;
+			children = (
+				DBED8B721C8D22DF0004B9FD /* Controller */,
+				DBED8B751C8D22DF0004B9FD /* Model */,
+				DBED8B761C8D22DF0004B9FD /* View */,
+			);
+			path = "Me(我)";
+			sourceTree = "<group>";
+		};
+		DBED8B721C8D22DF0004B9FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DBED8B731C8D22DF0004B9FD /* TAXMeViewController.h */,
+				DBED8B741C8D22DF0004B9FD /* TAXMeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DBED8B751C8D22DF0004B9FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DBED8B761C8D22DF0004B9FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DBED8B771C8D22DF0004B9FD /* New(新帖) */ = {
+			isa = PBXGroup;
+			children = (
+				DBED8B781C8D22DF0004B9FD /* Controller */,
+				DBED8B7B1C8D22DF0004B9FD /* Model */,
+				DBED8B7C1C8D22DF0004B9FD /* View */,
+			);
+			path = "New(新帖)";
+			sourceTree = "<group>";
+		};
+		DBED8B781C8D22DF0004B9FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DBED8B791C8D22DF0004B9FD /* TAXNewViewController.h */,
+				DBED8B7A1C8D22DF0004B9FD /* TAXNewViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DBED8B7B1C8D22DF0004B9FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DBED8B7C1C8D22DF0004B9FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DBED8B7D1C8D22DF0004B9FD /* Other(其他) */ = {
+			isa = PBXGroup;
+			children = (
+				DB96CA721C8E86C5009020D6 /* JSON */,
+				DB96CA6E1C8E8699009020D6 /* GGNetworking */,
+				DBED8B801C8D22DF0004B9FD /* Category */,
+				DBED8B851C8D22DF0004B9FD /* Controller */,
+				DBED8B881C8D22DF0004B9FD /* View */,
+				DBED8B7E1C8D22DF0004B9FD /* AppDelegate.h */,
+				DBED8B7F1C8D22DF0004B9FD /* AppDelegate.m */,
+				DB96CA691C8E8473009020D6 /* Foundation+Log.m */,
+			);
+			path = "Other(其他)";
+			sourceTree = "<group>";
+		};
+		DBED8B801C8D22DF0004B9FD /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				DBED8B811C8D22DF0004B9FD /* UIBarButtonItem+TAXAdditions.h */,
+				DBED8B821C8D22DF0004B9FD /* UIBarButtonItem+TAXAdditions.m */,
+				DBED8B831C8D22DF0004B9FD /* UIView+TAXAdditions.h */,
+				DBED8B841C8D22DF0004B9FD /* UIView+TAXAdditions.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		DBED8B851C8D22DF0004B9FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DBED8B861C8D22DF0004B9FD /* TAXTabBarController.h */,
+				DBED8B871C8D22DF0004B9FD /* TAXTabBarController.m */,
+				DBED8B941C8D2BF10004B9FD /* TAXNavigationController.h */,
+				DBED8B951C8D2BF10004B9FD /* TAXNavigationController.m */,
+				DBEBCA681C92A573007C0D49 /* UINavigationController+Consistent.h */,
+				DBEBCA691C92A573007C0D49 /* UINavigationController+Consistent.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DBED8B881C8D22DF0004B9FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DBED8B891C8D22DF0004B9FD /* TAXTabBar.h */,
+				DBED8B8A1C8D22DF0004B9FD /* TAXTabBar.m */,
+				DB5BEB931C97A39500269E4C /* TAXPushGuideView.h */,
+				DB5BEB941C97A39500269E4C /* TAXPushGuideView.m */,
+				DB5BEB961C97A3A100269E4C /* TAXPushGuideView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB5C93D71C8C0DB8004A6E93 /* BaiSiJie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB5C94051C8C0DB8004A6E93 /* Build configuration list for PBXNativeTarget "BaiSiJie" */;
+			buildPhases = (
+				C55277D8F3F8700C011A98BE /* Check Pods Manifest.lock */,
+				DB5C93D41C8C0DB8004A6E93 /* Sources */,
+				DB5C93D51C8C0DB8004A6E93 /* Frameworks */,
+				DB5C93D61C8C0DB8004A6E93 /* Resources */,
+				8E0113F59F87A54E73B1B163 /* Embed Pods Frameworks */,
+				3261A2784B8E0044CBCE1887 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BaiSiJie;
+			productName = BaiSiJie;
+			productReference = DB5C93D81C8C0DB8004A6E93 /* BaiSiJie.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB5C93F01C8C0DB8004A6E93 /* BaiSiJieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB5C94081C8C0DB8004A6E93 /* Build configuration list for PBXNativeTarget "BaiSiJieTests" */;
+			buildPhases = (
+				DB5C93ED1C8C0DB8004A6E93 /* Sources */,
+				DB5C93EE1C8C0DB8004A6E93 /* Frameworks */,
+				DB5C93EF1C8C0DB8004A6E93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB5C93F31C8C0DB8004A6E93 /* PBXTargetDependency */,
+			);
+			name = BaiSiJieTests;
+			productName = BaiSiJieTests;
+			productReference = DB5C93F11C8C0DB8004A6E93 /* BaiSiJieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DB5C93FB1C8C0DB8004A6E93 /* BaiSiJieUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB5C940B1C8C0DB8004A6E93 /* Build configuration list for PBXNativeTarget "BaiSiJieUITests" */;
+			buildPhases = (
+				DB5C93F81C8C0DB8004A6E93 /* Sources */,
+				DB5C93F91C8C0DB8004A6E93 /* Frameworks */,
+				DB5C93FA1C8C0DB8004A6E93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB5C93FE1C8C0DB8004A6E93 /* PBXTargetDependency */,
+			);
+			name = BaiSiJieUITests;
+			productName = BaiSiJieUITests;
+			productReference = DB5C93FC1C8C0DB8004A6E93 /* BaiSiJieUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB5C93D01C8C0DB8004A6E93 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TAX;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "谭安溪";
+				TargetAttributes = {
+					DB5C93D71C8C0DB8004A6E93 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					DB5C93F01C8C0DB8004A6E93 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = DB5C93D71C8C0DB8004A6E93;
+					};
+					DB5C93FB1C8C0DB8004A6E93 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = DB5C93D71C8C0DB8004A6E93;
+					};
+				};
+			};
+			buildConfigurationList = DB5C93D31C8C0DB8004A6E93 /* Build configuration list for PBXProject "BaiSiJie" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB5C93CF1C8C0DB8004A6E93;
+			productRefGroup = DB5C93D91C8C0DB8004A6E93 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB5C93D71C8C0DB8004A6E93 /* BaiSiJie */,
+				DB5C93F01C8C0DB8004A6E93 /* BaiSiJieTests */,
+				DB5C93FB1C8C0DB8004A6E93 /* BaiSiJieUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB5C93D61C8C0DB8004A6E93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBFDB7B31C8D7F8000B2BE8C /* TAXFriendTrendsViewController.xib in Resources */,
+				DB0F06281C8FECCF0073979B /* TAXRecommendUserCell.xib in Resources */,
+				DB5C93E81C8C0DB8004A6E93 /* Assets.xcassets in Resources */,
+				DB5BEB971C97A3A100269E4C /* TAXPushGuideView.xib in Resources */,
+				DB85E05A1C8EA95400CB911F /* TAXRecommendCategoryCell.xib in Resources */,
+				DB173D231C966B3800691150 /* TAXLoginRegisterViewController.xib in Resources */,
+				DB96CA681C8E72A4009020D6 /* TAXRecommendViewController.xib in Resources */,
+				DB173D191C965B7A00691150 /* TAXRecommendTagCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB5C93EF1C8C0DB8004A6E93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB5C93FA1C8C0DB8004A6E93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3261A2784B8E0044CBCE1887 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E0113F59F87A54E73B1B163 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C55277D8F3F8700C011A98BE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB5C93D41C8C0DB8004A6E93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB96CA821C8E86C5009020D6 /* SBJSON.m in Sources */,
+				DBED8B911C8D22DF0004B9FD /* UIView+TAXAdditions.m in Sources */,
+				DBED8B8E1C8D22DF0004B9FD /* TAXNewViewController.m in Sources */,
+				DB5BEB951C97A39500269E4C /* TAXPushGuideView.m in Sources */,
+				DB173D181C965B7A00691150 /* TAXRecommendTagCell.m in Sources */,
+				DBEBCA6A1C92A573007C0D49 /* UINavigationController+Consistent.m in Sources */,
+				DB173D111C9654C500691150 /* TAXRecommendTagViewController.m in Sources */,
+				DB96CA711C8E8699009020D6 /* GGNetworking.m in Sources */,
+				DB5C93DD1C8C0DB8004A6E93 /* main.m in Sources */,
+				DBED8B8F1C8D22DF0004B9FD /* AppDelegate.m in Sources */,
+				DBED8B8B1C8D22DF0004B9FD /* TAXEssenceViewController.m in Sources */,
+				DB173D291C96A93C00691150 /* TAXTextField.m in Sources */,
+				DB96CA851C8E86C5009020D6 /* SBJsonWriter.m in Sources */,
+				DB173D261C9686A900691150 /* TAXVerticalButton.m in Sources */,
+				DB173D221C966B3800691150 /* TAXLoginRegisterViewController.m in Sources */,
+				DB96CA671C8E72A4009020D6 /* TAXRecommendViewController.m in Sources */,
+				DB173D141C96571500691150 /* TAXRecommendTag.m in Sources */,
+				DB96CA831C8E86C5009020D6 /* SBJsonBase.m in Sources */,
+				DBED8B901C8D22DF0004B9FD /* UIBarButtonItem+TAXAdditions.m in Sources */,
+				DBED8B8D1C8D22DF0004B9FD /* TAXMeViewController.m in Sources */,
+				DBED8B931C8D22DF0004B9FD /* TAXTabBar.m in Sources */,
+				DB96CA841C8E86C5009020D6 /* SBJsonParser.m in Sources */,
+				DBED8B921C8D22DF0004B9FD /* TAXTabBarController.m in Sources */,
+				DB0F06271C8FECCF0073979B /* TAXRecommendUserCell.m in Sources */,
+				DB96CA6A1C8E8473009020D6 /* Foundation+Log.m in Sources */,
+				DB96CA811C8E86C5009020D6 /* NSString+SBJSON.m in Sources */,
+				DB0F06231C8FD37C0073979B /* TAXRecommendUser.m in Sources */,
+				DBED8B8C1C8D22DF0004B9FD /* TAXFriendTrendsViewController.m in Sources */,
+				DB85E05D1C8EAAE800CB911F /* TAXRecommendCategory.m in Sources */,
+				DB96CA801C8E86C5009020D6 /* NSObject+SBJSON.m in Sources */,
+				DB85E0591C8EA95400CB911F /* TAXRecommendCategoryCell.m in Sources */,
+				DBED8B961C8D2BF10004B9FD /* TAXNavigationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB5C93ED1C8C0DB8004A6E93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB5C93F61C8C0DB8004A6E93 /* BaiSiJieTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB5C93F81C8C0DB8004A6E93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB5C94011C8C0DB8004A6E93 /* BaiSiJieUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB5C93F31C8C0DB8004A6E93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB5C93D71C8C0DB8004A6E93 /* BaiSiJie */;
+			targetProxy = DB5C93F21C8C0DB8004A6E93 /* PBXContainerItemProxy */;
+		};
+		DB5C93FE1C8C0DB8004A6E93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB5C93D71C8C0DB8004A6E93 /* BaiSiJie */;
+			targetProxy = DB5C93FD1C8C0DB8004A6E93 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DB5C94031C8C0DB8004A6E93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DB5C94041C8C0DB8004A6E93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB5C94061C8C0DB8004A6E93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E229A9B79B41C97E1D8448E /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = BaiSiJie/PrefixHeader.pch;
+				INFOPLIST_FILE = BaiSiJie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huitouzi.BaiSiJie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+			};
+			name = Debug;
+		};
+		DB5C94071C8C0DB8004A6E93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73E0E34C3F2B0DE1864965D6 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = BaiSiJie/PrefixHeader.pch;
+				INFOPLIST_FILE = BaiSiJie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huitouzi.BaiSiJie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+			};
+			name = Release;
+		};
+		DB5C94091C8C0DB8004A6E93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BaiSiJieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huitouzi.BaiSiJieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BaiSiJie.app/BaiSiJie";
+			};
+			name = Debug;
+		};
+		DB5C940A1C8C0DB8004A6E93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BaiSiJieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huitouzi.BaiSiJieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BaiSiJie.app/BaiSiJie";
+			};
+			name = Release;
+		};
+		DB5C940C1C8C0DB8004A6E93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BaiSiJieUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huitouzi.BaiSiJieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BaiSiJie;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DB5C940D1C8C0DB8004A6E93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BaiSiJieUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huitouzi.BaiSiJieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BaiSiJie;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB5C93D31C8C0DB8004A6E93 /* Build configuration list for PBXProject "BaiSiJie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB5C94031C8C0DB8004A6E93 /* Debug */,
+				DB5C94041C8C0DB8004A6E93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB5C94051C8C0DB8004A6E93 /* Build configuration list for PBXNativeTarget "BaiSiJie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB5C94061C8C0DB8004A6E93 /* Debug */,
+				DB5C94071C8C0DB8004A6E93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB5C94081C8C0DB8004A6E93 /* Build configuration list for PBXNativeTarget "BaiSiJieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB5C94091C8C0DB8004A6E93 /* Debug */,
+				DB5C940A1C8C0DB8004A6E93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB5C940B1C8C0DB8004A6E93 /* Build configuration list for PBXNativeTarget "BaiSiJieUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB5C940C1C8C0DB8004A6E93 /* Debug */,
+				DB5C940D1C8C0DB8004A6E93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB5C93D01C8C0DB8004A6E93 /* Project object */;
+}
