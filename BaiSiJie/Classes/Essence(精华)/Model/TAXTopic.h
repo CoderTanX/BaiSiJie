@@ -25,4 +25,7 @@
 @property (nonatomic, copy) NSString *repost;
 /** 评论的数量 */
 @property (nonatomic, copy) NSString *comment;
+
+/**自己加的属性*/
+@property (nonatomic, assign) CGFloat TopicCellH;
 @end

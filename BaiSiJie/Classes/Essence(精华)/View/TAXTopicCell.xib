@@ -7,11 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopicCell" rowHeight="181" id="KGk-i7-Jjw" customClass="TAXTopicCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopicCell" rowHeight="224" id="KGk-i7-Jjw" customClass="TAXTopicCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="180.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="223.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="25Y-cX-iez" userLabel="头像">
@@ -43,7 +43,7 @@
                         <state key="highlighted" backgroundImage="cellFollowClickIcon"/>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mg-KF-B2x">
-                        <rect key="frame" x="0.0" y="136" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="179" width="320" height="44"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHb-QT-CiT" userLabel="顶">
                                 <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
@@ -77,7 +77,7 @@
                                 <state key="highlighted" image="mainCellShareClick"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell-button-line" translatesAutoresizingMaskIntoConstraints="NO" id="Y7m-S4-Sob">
-                                <rect key="frame" x="239" y="7.5" width="1" height="29"/>
+                                <rect key="frame" x="239" y="7" width="1" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="Jgf-La-6O3"/>
                                     <constraint firstAttribute="width" constant="1" id="VWd-r9-egc"/>
@@ -138,17 +138,26 @@
                             <constraint firstAttribute="height" constant="44" id="z7d-GK-7JQ"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcZ-U7-X6W">
+                        <rect key="frame" x="10" y="60" width="300" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="OcZ-U7-X6W" firstAttribute="top" secondItem="25Y-cX-iez" secondAttribute="bottom" constant="10" id="1SI-Km-plQ"/>
                     <constraint firstAttribute="bottom" secondItem="6mg-KF-B2x" secondAttribute="bottom" id="4CY-po-R15"/>
                     <constraint firstItem="y3m-Zy-F3g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="4pF-FH-5CN"/>
                     <constraint firstItem="25Y-cX-iez" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="5Kx-25-J9a"/>
                     <constraint firstItem="6mg-KF-B2x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Cbd-cj-v11"/>
                     <constraint firstAttribute="trailing" secondItem="y3m-Zy-F3g" secondAttribute="trailing" constant="10" id="GOB-qv-0nI"/>
+                    <constraint firstItem="OcZ-U7-X6W" firstAttribute="leading" secondItem="25Y-cX-iez" secondAttribute="leading" id="erR-Np-QnZ"/>
                     <constraint firstItem="bmx-op-0Vn" firstAttribute="top" secondItem="25Y-cX-iez" secondAttribute="top" id="hLx-Mf-9fi"/>
                     <constraint firstItem="bmx-op-0Vn" firstAttribute="leading" secondItem="25Y-cX-iez" secondAttribute="trailing" constant="10" id="jqx-uf-Pt6"/>
                     <constraint firstAttribute="trailing" secondItem="6mg-KF-B2x" secondAttribute="trailing" id="k07-YG-3BG"/>
                     <constraint firstItem="ecO-ic-nJB" firstAttribute="bottom" secondItem="25Y-cX-iez" secondAttribute="bottom" id="mtI-hz-81g"/>
+                    <constraint firstItem="y3m-Zy-F3g" firstAttribute="trailing" secondItem="OcZ-U7-X6W" secondAttribute="trailing" id="qmZ-qY-cfE"/>
                     <constraint firstItem="ecO-ic-nJB" firstAttribute="leading" secondItem="bmx-op-0Vn" secondAttribute="leading" id="rSX-l8-wBh"/>
                     <constraint firstItem="25Y-cX-iez" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="vrz-ae-5zi"/>
                 </constraints>
@@ -161,8 +170,9 @@
                 <outlet property="nameLabel" destination="bmx-op-0Vn" id="Z86-pv-0Mx"/>
                 <outlet property="profile_imageView" destination="25Y-cX-iez" id="Iay-zu-GYO"/>
                 <outlet property="repostBt" destination="pjK-7T-zhf" id="evh-zK-bFS"/>
+                <outlet property="text_label" destination="OcZ-U7-X6W" id="X1X-TZ-WAF"/>
             </connections>
-            <point key="canvasLocation" x="49" y="126.5"/>
+            <point key="canvasLocation" x="232" y="151"/>
         </tableViewCell>
     </objects>
     <resources>

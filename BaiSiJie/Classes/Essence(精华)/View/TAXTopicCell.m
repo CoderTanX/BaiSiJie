@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *caiBt;
 @property (weak, nonatomic) IBOutlet UIButton *repostBt;
 @property (weak, nonatomic) IBOutlet UIButton *commentBt;
+@property (weak, nonatomic) IBOutlet UILabel *text_label;
 
 @end
 @implementation TAXTopicCell
@@ -38,6 +39,7 @@
     [self setupButtonTitle:self.caiBt count:topic.cai placeholder:@"踩"];
     [self setupButtonTitle:self.repostBt count:topic.repost placeholder:@"分享"];
     [self setupButtonTitle:self.commentBt count:topic.comment placeholder:@"评论"];
+    self.text_label.text = topic.text;
 }
 
 - (void)testDate:(NSString*)create_time{

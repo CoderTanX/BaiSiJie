@@ -8,11 +8,7 @@
 
 #import "TAXEssenceViewController.h"
 #import "TAXRecommendTagViewController.h"
-#import "TAXAllViewController.h"
-#import "TAXVideoViewController.h"
-#import "TAXVoiceViewController.h"
-#import "TAXPictureViewController.h"
-#import "TAXWordViewController.h"
+#import "TAXTopicViewController.h"
 @interface TAXEssenceViewController ()<UIScrollViewDelegate>
 @property (nonatomic, weak) UIButton *currentTitleBt; ///<当前别选中的bt
 @property (nonatomic, weak) UIView *redLineView; ///<红的细线
@@ -41,19 +37,29 @@
 
 - (void)setupChildVc{
     
-    TAXAllViewController *allVc = [[TAXAllViewController alloc] init];
+    TAXTopicViewController *allVc = [[TAXTopicViewController alloc] init];
+    allVc.title = @"全部全部";
+    allVc.topticType = TAXTopicTypeAll;
     [self addChildViewController:allVc];
     
-    TAXVideoViewController *videoVc = [[TAXVideoViewController alloc] init];
+    TAXTopicViewController *videoVc = [[TAXTopicViewController alloc] init];
+    videoVc.title = @"视频";
+    videoVc.topticType  = TAXTopicTypeVideo;
     [self addChildViewController:videoVc];
     
-    TAXVoiceViewController *voiceVc = [[TAXVoiceViewController alloc] init];
+    TAXTopicViewController *voiceVc = [[TAXTopicViewController alloc] init];
+    voiceVc.title = @"音频";
+    voiceVc.topticType = TAXTopicTypeVoice;
     [self addChildViewController:voiceVc];
     
-    TAXPictureViewController *pictureVc = [[TAXPictureViewController alloc] init];
+    TAXTopicViewController *pictureVc = [[TAXTopicViewController alloc] init];
+    pictureVc.title = @"图片";
+    pictureVc.topticType = TAXTopicTypePicture;
     [self addChildViewController:pictureVc];
     
-    TAXWordViewController *wordVc = [[TAXWordViewController alloc] init];
+    TAXTopicViewController *wordVc = [[TAXTopicViewController alloc] init];
+    wordVc.title = @"段子";
+    pictureVc.topticType = TAXTopicTypeWord;
     [self addChildViewController:wordVc];
 }
 
@@ -81,14 +87,14 @@
     titleView.alpha = 0.8;
     [self.view addSubview:titleView];
     self.titleView = titleView;
-    NSArray *titles = @[@"全部",@"视频视频",@"音频",@"图片",@"段子"];
-    CGFloat titleBtW = titleView.width/titles.count;
+//    NSArray *titles = @[@"全部",@"视频视频",@"音频",@"图片",@"段子"];
+    CGFloat titleBtW = titleView.width/self.childViewControllers.count;
     CGFloat titleBtH = titleView.height;
-    for (int i = 0; i<titles.count; i++) {
+    for (int i = 0; i<self.childViewControllers.count; i++) {
         UIButton *titleBt = [UIButton buttonWithType:UIButtonTypeCustom];
         titleBt.tag = 10 + i;
         titleBt.frame = CGRectMake(titleBtW*i, 0, titleBtW, titleBtH);
-        [titleBt setTitle:titles[i] forState:UIControlStateNormal];
+        [titleBt setTitle:self.childViewControllers[i].title forState:UIControlStateNormal];
         [titleBt setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [titleBt setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
         titleBt.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -97,7 +103,7 @@
         if (i == 0) {
             [self titleBtClick:titleBt];
             UIView *redLineView = [[UIView alloc] init];
-            redLineView.width = [titles[i] sizeWithAttributes:@{NSFontAttributeName:titleBt.titleLabel.font}].width;
+            redLineView.width = [self.childViewControllers[i].title sizeWithAttributes:@{NSFontAttributeName:titleBt.titleLabel.font}].width;
             redLineView.height = 2;
             redLineView.centerX = titleBt.centerX;
             redLineView.y = titleView.height - redLineView.height;

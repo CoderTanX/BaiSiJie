@@ -1,19 +1,20 @@
 //
-//  TAXWordViewController.m
+//  TAXTopicViewController.m
 //  BaiSiJie
 //
 //  Created by 谭安溪 on 16/3/15.
 //  Copyright © 2016年 谭安溪. All rights reserved.
 //
 
-#import "TAXWordViewController.h"
+#import "TAXTopicViewController.h"
 #import "GGNetworking.h"
 #import "UIImageView+WebCache.h"
 #import "MJRefresh.h"
 #import "TAXTopic.h"
 #import "MJExtension.h"
 #import "TAXTopicCell.h"
-@interface TAXWordViewController ()
+@interface TAXTopicViewController ()
+
 @property (nonatomic, strong) NSMutableArray *topics; ///<数据源
 @property (nonatomic, copy) NSString *maxtime; ///<最大时间
 @property (nonatomic, assign) NSInteger page; ///<当前页
@@ -23,7 +24,11 @@
 
 static NSString *const TAXTopicCellId = @"TopicCell";
 
-@implementation TAXWordViewController
+@implementation TAXTopicViewController
+
+- (NSString *)type{
+    return nil;
+}
 
 - (NSMutableArray *)topics{
     
@@ -73,7 +78,7 @@ static NSString *const TAXTopicCellId = @"TopicCell";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @"29";
+    params[@"type"] = @(self.topticType);
     params[@"page"] = @(self.page);
     self.params = params;
     [GGNetworking getWithUrl:SERVICE_URL parameters:params success:^(id response) {
@@ -133,7 +138,9 @@ static NSString *const TAXTopicCellId = @"TopicCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 150;
+    
+    TAXTopic *topic = self.topics[indexPath.row];
+    return topic.TopicCellH;
 }
 
 

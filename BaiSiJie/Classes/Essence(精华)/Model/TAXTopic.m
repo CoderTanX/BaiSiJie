@@ -38,4 +38,18 @@
     }
 
 }
+
+- (CGFloat)TopicCellH{
+    
+    if (_TopicCellH == 0) {
+        CGFloat topH = TAXTopicCellMargin + TAXTopicCellImageH;
+        CGFloat middleH = [self.text boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 4*TAXTopicCellMargin, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil].size.height + 2 * TAXTopicCellMargin;
+        CGFloat bottomH = TAXTopicCellBottomH;
+        _TopicCellH = topH + middleH + bottomH + TAXTopicCellMargin;
+    }
+    return _TopicCellH;
+    
+}
+
+
 @end
