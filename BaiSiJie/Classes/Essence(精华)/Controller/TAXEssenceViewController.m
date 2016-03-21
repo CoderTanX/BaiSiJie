@@ -117,15 +117,16 @@
         self.redLineView.width = titleBt.titleLabel.width;
         self.redLineView.centerX = titleBt.centerX;
     }];
+    
     NSInteger i = titleBt.tag - 10;
     UITableViewController *vc = self.childViewControllers[i];
     vc.tableView.x = self.contentView.width * i;
     vc.tableView.y = 0;
     vc.tableView.width = self.contentView.width;
     vc.tableView.height = self.contentView.height;
-    CGFloat top = CGRectGetMaxY(self.titleView.frame);
-    vc.tableView.contentInset = UIEdgeInsetsMake(top, 0, 49, 0);
-    vc.tableView.scrollIndicatorInsets = vc.tableView.contentInset;
+//    CGFloat top = CGRectGetMaxY(self.titleView.frame);
+//    vc.tableView.contentInset = UIEdgeInsetsMake(top, 0, 49, 0);
+//    vc.tableView.scrollIndicatorInsets = vc.tableView.contentInset;
     [self.contentView addSubview:vc.tableView];
     [self.contentView setContentOffset:CGPointMake(self.contentView.width * i, 0) animated:YES];
 }

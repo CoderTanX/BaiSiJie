@@ -11,7 +11,7 @@
 
 #import "UIView+TAXAdditions.h"
 #import "UIBarButtonItem+TAXAdditions.h"
-
+#import "TAXConst.h"
 #define TAXRGBColor(r,g,b) [UIColor colorWithRed:(r)/255. green:(g)/255. blue:(b)/255. alpha:1]
 #define TAXGlobalBg  TAXRGBColor(233,233,233)
 

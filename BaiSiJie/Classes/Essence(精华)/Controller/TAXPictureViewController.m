@@ -16,9 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupTableView];
     
 }
-
+/**
+ *  初始化列表
+ */
+- (void)setupTableView{
+    CGFloat top = TAXTitlesViewY + TAXTitlesViewH;
+    CGFloat bottom = self.tabBarController.tabBar.height;
+    self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+}
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

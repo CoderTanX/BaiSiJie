@@ -9,27 +9,112 @@
 #import "TAXWordViewController.h"
 #import "GGNetworking.h"
 #import "UIImageView+WebCache.h"
+#import "MJRefresh.h"
+#import "TAXTopic.h"
+#import "MJExtension.h"
+#import "TAXTopicCell.h"
 @interface TAXWordViewController ()
-@property (nonatomic, strong) NSArray *topics; ///<数据源
+@property (nonatomic, strong) NSMutableArray *topics; ///<数据源
+@property (nonatomic, copy) NSString *maxtime; ///<最大时间
+@property (nonatomic, assign) NSInteger page; ///<当前页
+@property (nonatomic, strong) NSDictionary *params; ///<参数
+
 @end
+
+static NSString *const TAXTopicCellId = @"TopicCell";
 
 @implementation TAXWordViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self loadNewTopics];
+- (NSMutableArray *)topics{
+    
+    if (!_topics) {
+        _topics = [NSMutableArray array];
+    }
+    return _topics;
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    //初始化列表
+    [self setupTableView];
+    //初始化刷新控件
+    [self setupRefresh];
+}
+/**
+ *  初始化列表
+ */
+- (void)setupTableView{
+    self.tableView.backgroundColor = TAXGlobalBg;
+    CGFloat top = TAXTitlesViewY + TAXTitlesViewH;
+    CGFloat bottom = self.tabBarController.tabBar.height;
+    self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TAXTopicCell class]) bundle:nil] forCellReuseIdentifier:TAXTopicCellId];
+    
+}
+
+/**
+ *  初始化刷新控件
+ */
+- (void)setupRefresh{
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewTopics)];
+    [self.tableView.mj_header beginRefreshing];
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopics)];
+}
+
+/**
+ * 下拉刷新
+ */
 - (void)loadNewTopics{
+    [self.tableView.mj_footer endRefreshing];
+    self.page = 0;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
     params[@"type"] = @"29";
+    params[@"page"] = @(self.page);
+    self.params = params;
     [GGNetworking getWithUrl:SERVICE_URL parameters:params success:^(id response) {
-        self.topics = response[@"list"];
+        if (self.params != params) return ;
+        
+        [self.tableView.mj_header endRefreshing];
+        [self.topics removeAllObjects];
+        self.maxtime = response[@"info"][@"maxtime"];
+        NSArray *data = [TAXTopic mj_objectArrayWithKeyValuesArray:response[@"list"]];
+        [self.topics addObjectsFromArray:data];
+        [self.tableView reloadData];
+        self.page = 0;
+    } failure:^(NSError *error) {
+        if (self.params != params) return ;
+        [self.tableView.mj_header endRefreshing];
+    }];
+}
+
+/**
+ * 上拉加载
+ */
+- (void)loadMoreTopics{
+    [self.tableView.mj_header endRefreshing];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"data";
+    params[@"type"] = @"29";
+    params[@"maxtime"] = self.maxtime;
+    params[@"page"] = @(++self.page);
+    self.params = params;
+    [GGNetworking getWithUrl:SERVICE_URL parameters:params success:^(id response) {
+        if (self.params != params) return ;
+        [self.tableView.mj_footer endRefreshing];
+        self.maxtime = response[@"info"][@"maxtime"];
+        NSArray *data = [TAXTopic mj_objectArrayWithKeyValuesArray:response[@"list"]];
+        [self.topics addObjectsFromArray:data];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
-        
+        if (self.params != params) return ;
+        [self.tableView.mj_footer endRefreshing];
+        self.page--;
     }];
 }
 
@@ -42,59 +127,14 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
-    }
-    cell.textLabel.text = self.topics[indexPath.row][@"name"];
-    cell.detailTextLabel.text = self.topics[indexPath.row][@"text"];
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:self.topics[indexPath.row][@"profile_image"]] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    TAXTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:TAXTopicCellId];
+    cell.topic = self.topics[indexPath.row];
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 150;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -32,6 +32,11 @@
 		DB85E0591C8EA95400CB911F /* TAXRecommendCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85E0571C8EA95400CB911F /* TAXRecommendCategoryCell.m */; };
 		DB85E05A1C8EA95400CB911F /* TAXRecommendCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB85E0581C8EA95400CB911F /* TAXRecommendCategoryCell.xib */; };
 		DB85E05D1C8EAAE800CB911F /* TAXRecommendCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85E05C1C8EAAE800CB911F /* TAXRecommendCategory.m */; };
+		DB93C79B1C9BB219009DA1B0 /* TAXConst.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93C79A1C9BB219009DA1B0 /* TAXConst.m */; };
+		DB93C79E1C9BCFAC009DA1B0 /* TAXTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93C79D1C9BCFAC009DA1B0 /* TAXTopic.m */; };
+		DB93C7A71C9BE060009DA1B0 /* TAXTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93C7A51C9BE060009DA1B0 /* TAXTopicCell.m */; };
+		DB93C7A81C9BE060009DA1B0 /* TAXTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB93C7A61C9BE060009DA1B0 /* TAXTopicCell.xib */; };
+		DB93C7AB1C9BF028009DA1B0 /* NSDate+TAXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93C7AA1C9BF028009DA1B0 /* NSDate+TAXAdditions.m */; };
 		DB96CA671C8E72A4009020D6 /* TAXRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96CA651C8E72A4009020D6 /* TAXRecommendViewController.m */; };
 		DB96CA681C8E72A4009020D6 /* TAXRecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB96CA661C8E72A4009020D6 /* TAXRecommendViewController.xib */; };
 		DB96CA6A1C8E8473009020D6 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96CA691C8E8473009020D6 /* Foundation+Log.m */; };
@@ -126,6 +131,15 @@
 		DB85E0581C8EA95400CB911F /* TAXRecommendCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXRecommendCategoryCell.xib; sourceTree = "<group>"; };
 		DB85E05B1C8EAAE800CB911F /* TAXRecommendCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXRecommendCategory.h; sourceTree = "<group>"; };
 		DB85E05C1C8EAAE800CB911F /* TAXRecommendCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXRecommendCategory.m; sourceTree = "<group>"; };
+		DB93C7991C9BB219009DA1B0 /* TAXConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXConst.h; sourceTree = "<group>"; };
+		DB93C79A1C9BB219009DA1B0 /* TAXConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXConst.m; sourceTree = "<group>"; };
+		DB93C79C1C9BCFAC009DA1B0 /* TAXTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXTopic.h; sourceTree = "<group>"; };
+		DB93C79D1C9BCFAC009DA1B0 /* TAXTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXTopic.m; sourceTree = "<group>"; };
+		DB93C7A41C9BE060009DA1B0 /* TAXTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXTopicCell.h; sourceTree = "<group>"; };
+		DB93C7A51C9BE060009DA1B0 /* TAXTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXTopicCell.m; sourceTree = "<group>"; };
+		DB93C7A61C9BE060009DA1B0 /* TAXTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXTopicCell.xib; sourceTree = "<group>"; };
+		DB93C7A91C9BF028009DA1B0 /* NSDate+TAXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TAXAdditions.h"; sourceTree = "<group>"; };
+		DB93C7AA1C9BF028009DA1B0 /* NSDate+TAXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TAXAdditions.m"; sourceTree = "<group>"; };
 		DB96CA641C8E72A4009020D6 /* TAXRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXRecommendViewController.h; sourceTree = "<group>"; };
 		DB96CA651C8E72A4009020D6 /* TAXRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXRecommendViewController.m; sourceTree = "<group>"; };
 		DB96CA661C8E72A4009020D6 /* TAXRecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXRecommendViewController.xib; sourceTree = "<group>"; };
@@ -350,6 +364,8 @@
 			children = (
 				DB173D121C96571500691150 /* TAXRecommendTag.h */,
 				DB173D131C96571500691150 /* TAXRecommendTag.m */,
+				DB93C79C1C9BCFAC009DA1B0 /* TAXTopic.h */,
+				DB93C79D1C9BCFAC009DA1B0 /* TAXTopic.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -357,6 +373,9 @@
 		DBED8B6A1C8D22DF0004B9FD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DB93C7A41C9BE060009DA1B0 /* TAXTopicCell.h */,
+				DB93C7A51C9BE060009DA1B0 /* TAXTopicCell.m */,
+				DB93C7A61C9BE060009DA1B0 /* TAXTopicCell.xib */,
 				DB173D151C965B7A00691150 /* TAXRecommendTagCell.h */,
 				DB173D161C965B7A00691150 /* TAXRecommendTagCell.m */,
 				DB173D171C965B7A00691150 /* TAXRecommendTagCell.xib */,
@@ -495,6 +514,8 @@
 				DBED8B7E1C8D22DF0004B9FD /* AppDelegate.h */,
 				DBED8B7F1C8D22DF0004B9FD /* AppDelegate.m */,
 				DB96CA691C8E8473009020D6 /* Foundation+Log.m */,
+				DB93C7991C9BB219009DA1B0 /* TAXConst.h */,
+				DB93C79A1C9BB219009DA1B0 /* TAXConst.m */,
 			);
 			path = "Other(其他)";
 			sourceTree = "<group>";
@@ -506,6 +527,8 @@
 				DBED8B821C8D22DF0004B9FD /* UIBarButtonItem+TAXAdditions.m */,
 				DBED8B831C8D22DF0004B9FD /* UIView+TAXAdditions.h */,
 				DBED8B841C8D22DF0004B9FD /* UIView+TAXAdditions.m */,
+				DB93C7A91C9BF028009DA1B0 /* NSDate+TAXAdditions.h */,
+				DB93C7AA1C9BF028009DA1B0 /* NSDate+TAXAdditions.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -648,6 +671,7 @@
 				DB5BEB971C97A3A100269E4C /* TAXPushGuideView.xib in Resources */,
 				DB85E05A1C8EA95400CB911F /* TAXRecommendCategoryCell.xib in Resources */,
 				DB173D231C966B3800691150 /* TAXLoginRegisterViewController.xib in Resources */,
+				DB93C7A81C9BE060009DA1B0 /* TAXTopicCell.xib in Resources */,
 				DB96CA681C8E72A4009020D6 /* TAXRecommendViewController.xib in Resources */,
 				DB173D191C965B7A00691150 /* TAXRecommendTagCell.xib in Resources */,
 			);
@@ -738,9 +762,12 @@
 				DB173D291C96A93C00691150 /* TAXTextField.m in Sources */,
 				DB96CA851C8E86C5009020D6 /* SBJsonWriter.m in Sources */,
 				DB173D261C9686A900691150 /* TAXVerticalButton.m in Sources */,
+				DB93C79E1C9BCFAC009DA1B0 /* TAXTopic.m in Sources */,
 				DB173D221C966B3800691150 /* TAXLoginRegisterViewController.m in Sources */,
 				DB96CA671C8E72A4009020D6 /* TAXRecommendViewController.m in Sources */,
+				DB93C79B1C9BB219009DA1B0 /* TAXConst.m in Sources */,
 				DB5BEBB51C980A5B00269E4C /* TAXPictureViewController.m in Sources */,
+				DB93C7A71C9BE060009DA1B0 /* TAXTopicCell.m in Sources */,
 				DB173D141C96571500691150 /* TAXRecommendTag.m in Sources */,
 				DB96CA831C8E86C5009020D6 /* SBJsonBase.m in Sources */,
 				DB5BEBAF1C980A3D00269E4C /* TAXVideoViewController.m in Sources */,
@@ -751,6 +778,7 @@
 				DB96CA841C8E86C5009020D6 /* SBJsonParser.m in Sources */,
 				DBED8B921C8D22DF0004B9FD /* TAXTabBarController.m in Sources */,
 				DB0F06271C8FECCF0073979B /* TAXRecommendUserCell.m in Sources */,
+				DB93C7AB1C9BF028009DA1B0 /* NSDate+TAXAdditions.m in Sources */,
 				DB96CA6A1C8E8473009020D6 /* Foundation+Log.m in Sources */,
 				DB96CA811C8E86C5009020D6 /* NSString+SBJSON.m in Sources */,
 				DB0F06231C8FD37C0073979B /* TAXRecommendUser.m in Sources */,
