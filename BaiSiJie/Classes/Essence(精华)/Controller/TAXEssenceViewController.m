@@ -38,7 +38,7 @@
 - (void)setupChildVc{
     
     TAXTopicViewController *allVc = [[TAXTopicViewController alloc] init];
-    allVc.title = @"全部全部";
+    allVc.title = @"全部";
     allVc.topticType = TAXTopicTypeAll;
     [self addChildViewController:allVc];
     
@@ -59,7 +59,7 @@
     
     TAXTopicViewController *wordVc = [[TAXTopicViewController alloc] init];
     wordVc.title = @"段子";
-    pictureVc.topticType = TAXTopicTypeWord;
+    wordVc.topticType = TAXTopicTypeWord;
     [self addChildViewController:wordVc];
 }
 

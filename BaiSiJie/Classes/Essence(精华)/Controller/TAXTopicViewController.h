@@ -8,13 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger,TopticType) {
-    TAXTopicTypeAll = 1,
-    TAXTopicTypePicture = 10,
-    TAXTopicTypeWord = 29,
-    TAXTopicTypeVoice = 31,
-    TAXTopicTypeVideo = 41
-};
 
 @interface TAXTopicViewController : UITableViewController
 //- (NSString *)type;///<帖子的类型交给子类实现

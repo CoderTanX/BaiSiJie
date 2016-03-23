@@ -10,6 +10,7 @@
 #import "TAXTopic.h"
 #import "UIImageView+WebCache.h"
 #import "NSDate+TAXAdditions.h"
+#import "TAXTopicPictureView.h"
 @interface TAXTopicCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *profile_imageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -19,9 +20,19 @@
 @property (weak, nonatomic) IBOutlet UIButton *repostBt;
 @property (weak, nonatomic) IBOutlet UIButton *commentBt;
 @property (weak, nonatomic) IBOutlet UILabel *text_label;
-
+@property (nonatomic, weak) TAXTopicPictureView *pirtureVIew; ///<中间的图片
 @end
 @implementation TAXTopicCell
+
+- (TAXTopicPictureView *)pirtureVIew{
+    
+    if (!_pirtureVIew) {
+        TAXTopicPictureView *pirtureView = [TAXTopicPictureView pictureView];
+        [self.contentView addSubview:pirtureView];
+        _pirtureVIew = pirtureView;
+    }
+    return _pirtureVIew;
+}
 
 - (void)awakeFromNib {
     // Initialization code
@@ -33,13 +44,21 @@
     self.nameLabel.text = topic.name;
     self.create_timeLabel.text = topic.create_time;
     
-    
-    
     [self setupButtonTitle:self.dingBt count:topic.ding placeholder:@"顶"];
     [self setupButtonTitle:self.caiBt count:topic.cai placeholder:@"踩"];
     [self setupButtonTitle:self.repostBt count:topic.repost placeholder:@"分享"];
     [self setupButtonTitle:self.commentBt count:topic.comment placeholder:@"评论"];
     self.text_label.text = topic.text;
+    
+    if (topic.type == TAXTopicTypePicture) {
+        self.pirtureVIew.frame = topic.pictureF;
+        self.pirtureVIew.topic = topic;
+    }
+}
+
+- (void)layoutSubviews{
+    [super layoutSubviews];
+//    self.autoresizingMask = UIViewAutoresizingNone;
 }
 
 - (void)testDate:(NSString*)create_time{
