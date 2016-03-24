@@ -10,9 +10,12 @@
 #import "TAXTopic.h"
 #import "UIImageView+WebCache.h"
 #import "SVProgressHUD.h"
+#import "DALabeledCircularProgressView.h"
 @interface TAXShowPictureViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) UIImageView *imageView; ///<图片
+@property (weak, nonatomic) IBOutlet  DALabeledCircularProgressView*progressView;
+
 @end
 
 @implementation TAXShowPictureViewController
@@ -22,11 +25,20 @@
     UIImageView *imageView = [[UIImageView alloc] init];
     [self.scrollView addSubview:imageView];
     self.imageView = imageView;
+    self.progressView.progressLabel.textColor = [UIColor whiteColor];
+    self.progressView.roundedCorners = 5;
     //添加点击手势
     imageView.userInteractionEnabled = YES;
     [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backClick)]];
-
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.topic.bigImage]];
+    [self.progressView setProgress:self.topic.pictureProgress animated:YES];
+    self.progressView.progressLabel.text = [NSString stringWithFormat:@"%d%%",(int)(self.topic.pictureProgress * 100)];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.topic.bigImage] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        CGFloat process = 1.0 * receivedSize/expectedSize;
+        [self.progressView setProgress:process animated:YES];
+        self.progressView.progressLabel.text = [NSString stringWithFormat:@"%d%%",(int)(process * 100)];
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.progressView.hidden = YES;
+    }];
     
     //计算picture的frame
     CGFloat pictureW = TAXScreenW;

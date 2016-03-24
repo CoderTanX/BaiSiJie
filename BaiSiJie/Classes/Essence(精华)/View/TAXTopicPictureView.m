@@ -46,13 +46,13 @@
 
 - (void)setTopic:(TAXTopic *)topic{
     _topic = topic;
+    [self.progressView setProgress:topic.pictureProgress animated:NO];
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:topic.bigImage] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         self.progressView.hidden = NO;
-    
-        CGFloat progress = 1.0 * receivedSize/expectedSize;
-        [self.progressView setProgress:progress animated:NO];
+        topic.pictureProgress = 1.0 * receivedSize/expectedSize;
+        [self.progressView setProgress:topic.pictureProgress animated:NO];
         
-        self.progressView.progressLabel.text = [NSString stringWithFormat:@"%d%%",(int)(progress * 100)];
+        self.progressView.progressLabel.text = [NSString stringWithFormat:@"%d%%",(int)( topic.pictureProgress * 100)];
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         self.progressView.hidden = YES;
     }];

@@ -37,9 +37,8 @@
 
 @property (nonatomic, assign) BOOL is_gif; ///<是否是gif
 /**自己加的属性*/
-@property (nonatomic, assign) CGFloat TopicCellH;
+@property (nonatomic, assign) CGFloat TopicCellH;///<cell的高度
 @property (nonatomic, assign) CGRect pictureF; ///<图片的frame
 @property (nonatomic, assign, getter=isBigPicture) BOOL bigPicture; ///<是否是大图 需要裁剪
-
-
+@property (nonatomic, assign) CGFloat pictureProgress; ///<进度
 @end
