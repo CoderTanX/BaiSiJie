@@ -53,6 +53,9 @@
     if (topic.type == TAXTopicTypePicture) {
         self.pirtureVIew.frame = topic.pictureF;
         self.pirtureVIew.topic = topic;
+        self.pirtureVIew.hidden = NO;
+    }else{
+        self.pirtureVIew.hidden = YES;
     }
 }
 
@@ -77,9 +80,9 @@
 
 - (void)setupButtonTitle:(UIButton *)button count:(NSString *)count placeholder:(NSString *)placeholder{
 
-    if ([count integerValue]>10000) {
+    if ([count integerValue] > 10000) {
         count = [NSString stringWithFormat:@"%.1f万",[count integerValue]/10000.];
-    }else if([count integerValue]==0){
+    }else if([count integerValue] == 0){
         count = placeholder;
     }
     [button setTitle:count forState:UIControlStateNormal];
@@ -87,13 +90,11 @@
 }
 
 
-
 - (void)setFrame:(CGRect)frame{
-    CGFloat margin = 10;
-    frame.origin.x = margin;
-    frame.size.width -= 2 * margin;
-    frame.size.height -= margin;
-    frame.origin.y += margin;;
+    frame.origin.x = TAXTopicCellMargin;
+    frame.size.width -= 2 * TAXTopicCellMargin;
+    frame.size.height -= TAXTopicCellMargin;
+    frame.origin.y += TAXTopicCellMargin;;
     [super setFrame:frame];
 }
 

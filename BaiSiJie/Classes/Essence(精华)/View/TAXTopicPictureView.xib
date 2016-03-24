@@ -11,9 +11,16 @@
             <rect key="frame" x="0.0" y="0.0" width="306" height="244"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Atg-Lq-HWo">
+                    <rect key="frame" x="115" y="15" width="75" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="0xI-7D-dDD"/>
+                        <constraint firstAttribute="width" constant="75" id="plf-WC-Dvy"/>
+                    </constraints>
+                </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="te1-kP-ZGb">
                     <rect key="frame" x="0.0" y="0.0" width="306" height="244"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common-gif" translatesAutoresizingMaskIntoConstraints="NO" id="QfQ-lh-HdC">
                     <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
@@ -30,32 +37,49 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="点击查看全图" image="see-big-picture" backgroundImage="see-big-picture-background"/>
+                    <connections>
+                        <action selector="showPicture" destination="iN0-l3-epB" eventType="touchUpInside" id="cpM-YY-UeT"/>
+                    </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7B-Rh-MPv" customClass="DALabeledCircularProgressView">
+                    <rect key="frame" x="103" y="72" width="100" height="100"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="QnV-eV-K5p"/>
+                        <constraint firstAttribute="height" constant="100" id="aze-nQ-IrB"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.84069683908045967" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="y0B-XH-zCp" secondAttribute="trailing" id="07I-Kb-wzw"/>
                 <constraint firstItem="QfQ-lh-HdC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0px-QF-c2a"/>
+                <constraint firstItem="Atg-Lq-HWo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8n1-zP-ULu"/>
                 <constraint firstAttribute="bottom" secondItem="te1-kP-ZGb" secondAttribute="bottom" id="9jf-bO-a1i"/>
                 <constraint firstAttribute="trailing" secondItem="te1-kP-ZGb" secondAttribute="trailing" id="FOi-sY-0Co"/>
                 <constraint firstAttribute="bottom" secondItem="y0B-XH-zCp" secondAttribute="bottom" id="GzZ-bh-tOe"/>
                 <constraint firstItem="te1-kP-ZGb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HXw-hi-J1K"/>
+                <constraint firstItem="I7B-Rh-MPv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Xge-5B-3cM"/>
                 <constraint firstItem="QfQ-lh-HdC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="f1b-2c-vPu"/>
+                <constraint firstItem="Atg-Lq-HWo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="hcu-n0-eLG"/>
                 <constraint firstItem="y0B-XH-zCp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jng-LV-OMB"/>
                 <constraint firstItem="te1-kP-ZGb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vgb-F9-pXZ"/>
+                <constraint firstItem="I7B-Rh-MPv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="zuK-Zs-hGi"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="gifImageView" destination="QfQ-lh-HdC" id="mxq-kT-QkG"/>
                 <outlet property="imageView" destination="te1-kP-ZGb" id="Mu2-kM-qK8"/>
+                <outlet property="progressView" destination="I7B-Rh-MPv" id="Qox-0O-8If"/>
                 <outlet property="seeBigImageBt" destination="y0B-XH-zCp" id="IAn-Yu-oTX"/>
             </connections>
-            <point key="canvasLocation" x="141" y="130"/>
+            <point key="canvasLocation" x="203" y="127"/>
         </view>
     </objects>
     <resources>
         <image name="common-gif" width="31" height="31"/>
+        <image name="imageBackground" width="75" height="15"/>
         <image name="see-big-picture" width="19" height="19"/>
         <image name="see-big-picture-background" width="285" height="43"/>
     </resources>

@@ -27,4 +27,7 @@
 
 #define SERVICE_URL @"http://api.budejie.com/api/api_open.php"
 
+#define TAXScreenW [UIScreen mainScreen].bounds.size.width
+#define TAXScreenH [UIScreen mainScreen].bounds.size.height
+
 #endif /* PrefixHeader_pch */
