@@ -7,27 +7,28 @@
 //
 
 #import "TAXTabBar.h"
-
+#import "TAXPublishViewController.h"
 @interface TAXTabBar ()
-@property (nonatomic, weak) UIButton *publicBt;
+@property (nonatomic, weak) UIButton *publishBt;
 @end
 @implementation TAXTabBar
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        UIButton *publicBt = [UIButton buttonWithType:UIButtonTypeCustom];
-        [publicBt setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
-        [publicBt setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
-        [publicBt sizeToFit];
-        [self addSubview:publicBt];
-        self.publicBt = publicBt;
+        UIButton *publishBt = [UIButton buttonWithType:UIButtonTypeCustom];
+        [publishBt setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
+        [publishBt setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
+        [publishBt addTarget:self action:@selector(publishBtClick) forControlEvents:UIControlEventTouchUpInside];
+        [publishBt sizeToFit];
+        [self addSubview:publishBt];
+        self.publishBt = publishBt;
     }
     return self;
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.publicBt.center = CGPointMake(self.frame.size.width*0.5, self.frame.size.height*0.5);
+    self.publishBt.center = CGPointMake(self.frame.size.width*0.5, self.frame.size.height*0.5);
     CGFloat buttonY = 0;
     CGFloat buttonW = self.frame.size.width/5;
     CGFloat buttonH = self.frame.size.height;
@@ -39,6 +40,11 @@
             index ++;
         }
     }
+}
+
+- (void)publishBtClick{
+    TAXPublishViewController *publicVc = [[TAXPublishViewController alloc] init];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:publicVc animated:NO completion:nil];
 }
 
 @end

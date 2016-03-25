@@ -55,16 +55,23 @@
         self.progressView.progressLabel.text = [NSString stringWithFormat:@"%d%%",(int)( topic.pictureProgress * 100)];
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         self.progressView.hidden = YES;
+        
+        if (!topic.bigPicture) return ;
+        
+        UIGraphicsBeginImageContextWithOptions(topic.pictureF.size, YES, 0.0);
+        
+        CGFloat width = topic.pictureF.size.width;
+        CGFloat height = topic.height * width/topic.width;
+        [image drawInRect:CGRectMake(0, 0, width, height)];
+        
+        self.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        
+        
     }];
     self.gifImageView.hidden = !topic.is_gif;
-    if (topic.bigPicture) {
-        self.seeBigImageBt.hidden = NO;
-        self.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    }else{
-        self.seeBigImageBt.hidden = YES;
-        self.imageView.contentMode = UIViewContentModeScaleToFill;
-    }
-    
+    self.seeBigImageBt.hidden = !topic.bigPicture;
 }
 
 @end

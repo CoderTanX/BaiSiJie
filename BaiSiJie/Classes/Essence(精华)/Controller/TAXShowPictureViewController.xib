@@ -41,7 +41,7 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XQ-ur-90k">
                     <rect key="frame" x="235" y="523" width="65" height="25"/>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.33000000000000002" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="65" id="0NK-lc-rtl"/>
                         <constraint firstAttribute="height" constant="25" id="oIz-l1-gd9"/>
@@ -54,7 +54,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S07-Y0-Sc3">
                     <rect key="frame" x="150" y="523" width="65" height="25"/>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="0.59588320035460995" colorSpace="calibratedWhite"/>
                     <state key="normal" title="转发"/>
                 </button>
             </subviews>

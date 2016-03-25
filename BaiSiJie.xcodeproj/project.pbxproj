@@ -58,6 +58,8 @@
 		DBED8B961C8D2BF10004B9FD /* TAXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBED8B951C8D2BF10004B9FD /* TAXNavigationController.m */; };
 		DBF4AFBB1CA385960053A92B /* TAXShowPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF4AFB91CA385960053A92B /* TAXShowPictureViewController.m */; };
 		DBF4AFBC1CA385960053A92B /* TAXShowPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBF4AFBA1CA385960053A92B /* TAXShowPictureViewController.xib */; };
+		DBF4AFC01CA3C8840053A92B /* TAXPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF4AFBE1CA3C8840053A92B /* TAXPublishViewController.m */; };
+		DBF4AFC11CA3C8840053A92B /* TAXPublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBF4AFBF1CA3C8840053A92B /* TAXPublishViewController.xib */; };
 		DBFDB7B31C8D7F8000B2BE8C /* TAXFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBFDB7B21C8D7F8000B2BE8C /* TAXFriendTrendsViewController.xib */; };
 		E17EDE02D3D095F1C1410ACC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D902A3880D0A5BBC32EFF6E /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -179,6 +181,9 @@
 		DBF4AFB81CA385960053A92B /* TAXShowPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXShowPictureViewController.h; sourceTree = "<group>"; };
 		DBF4AFB91CA385960053A92B /* TAXShowPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXShowPictureViewController.m; sourceTree = "<group>"; };
 		DBF4AFBA1CA385960053A92B /* TAXShowPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXShowPictureViewController.xib; sourceTree = "<group>"; };
+		DBF4AFBD1CA3C8840053A92B /* TAXPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXPublishViewController.h; sourceTree = "<group>"; };
+		DBF4AFBE1CA3C8840053A92B /* TAXPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXPublishViewController.m; sourceTree = "<group>"; };
+		DBF4AFBF1CA3C8840053A92B /* TAXPublishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXPublishViewController.xib; sourceTree = "<group>"; };
 		DBFDB7B21C8D7F8000B2BE8C /* TAXFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXFriendTrendsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -538,6 +543,9 @@
 				DBED8B951C8D2BF10004B9FD /* TAXNavigationController.m */,
 				DBEBCA681C92A573007C0D49 /* UINavigationController+Consistent.h */,
 				DBEBCA691C92A573007C0D49 /* UINavigationController+Consistent.m */,
+				DBF4AFBD1CA3C8840053A92B /* TAXPublishViewController.h */,
+				DBF4AFBE1CA3C8840053A92B /* TAXPublishViewController.m */,
+				DBF4AFBF1CA3C8840053A92B /* TAXPublishViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -665,6 +673,7 @@
 				DB0F06281C8FECCF0073979B /* TAXRecommendUserCell.xib in Resources */,
 				DB5C93E81C8C0DB8004A6E93 /* Assets.xcassets in Resources */,
 				DB5BEB971C97A3A100269E4C /* TAXPushGuideView.xib in Resources */,
+				DBF4AFC11CA3C8840053A92B /* TAXPublishViewController.xib in Resources */,
 				DBF4AFBC1CA385960053A92B /* TAXShowPictureViewController.xib in Resources */,
 				DB85E05A1C8EA95400CB911F /* TAXRecommendCategoryCell.xib in Resources */,
 				DB173D231C966B3800691150 /* TAXLoginRegisterViewController.xib in Resources */,
@@ -752,6 +761,7 @@
 				DBEBCA6A1C92A573007C0D49 /* UINavigationController+Consistent.m in Sources */,
 				DB173D111C9654C500691150 /* TAXRecommendTagViewController.m in Sources */,
 				DB96CA711C8E8699009020D6 /* GGNetworking.m in Sources */,
+				DBF4AFC01CA3C8840053A92B /* TAXPublishViewController.m in Sources */,
 				DB5C93DD1C8C0DB8004A6E93 /* main.m in Sources */,
 				DBED8B8F1C8D22DF0004B9FD /* AppDelegate.m in Sources */,
 				DBED8B8B1C8D22DF0004B9FD /* TAXEssenceViewController.m in Sources */,
