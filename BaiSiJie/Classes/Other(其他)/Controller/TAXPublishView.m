@@ -1,28 +1,45 @@
 //
-//  TAXPublishViewController.m
+//  TAXPublishView.m
 //  BaiSiJie
 //
 //  Created by 谭安溪 on 16/3/24.
 //  Copyright © 2016年 谭安溪. All rights reserved.
 //
 
-#import "TAXPublishViewController.h"
+#import "TAXPublishView.h"
 #import "TAXVerticalButton.h"
 #import "POP.h"
 
 typedef void(^completion)();
-@interface TAXPublishViewController ()
+@interface TAXPublishView ()
 @property (nonatomic, weak) UIImageView *sloganView; ///<logo
 
 @end
 
 static CGFloat const AnimationDelay = 0.1;
 static CGFloat const SpringFactor = 10;
-@implementation TAXPublishViewController
+@implementation TAXPublishView
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.view.userInteractionEnabled = NO;
+static UIWindow * window_;
+
++ (void)show{
+    
+    window_ = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    window_.hidden = NO;
+    window_.backgroundColor = [UIColor whiteColor];
+    
+    TAXPublishView *publishView = [self publicView];
+    publishView.frame = window_.bounds;
+    [window_ addSubview:publishView];
+}
+
+
++(instancetype)publicView{
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil]lastObject];
+}
+
+- (void)awakeFromNib{
+    self.userInteractionEnabled = NO;
     //发布的按钮
     NSArray *images = @[@"publish-video", @"publish-picture", @"publish-text", @"publish-audio", @"publish-review", @"publish-offline"];
     NSArray *titles = @[@"发视频", @"发图片", @"发段子", @"发声音", @"审帖", @"离线下载"];
@@ -42,7 +59,7 @@ static CGFloat const SpringFactor = 10;
         button.tag = 10 +i;
         [button setImage:[UIImage imageNamed:images[i]] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:button];
+        [self addSubview:button];
         
         CGFloat buttonX = buttonStartX + i%maxCols * (buttonW + margin);
         CGFloat buttonY = buttonStartY + buttonH * (i/maxCols);
@@ -51,11 +68,11 @@ static CGFloat const SpringFactor = 10;
         anim.beginTime = CACurrentMediaTime() + AnimationDelay * i;
         anim.springSpeed = 10;
         anim.springBounciness = 10;
-//        [anim setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
-//            if (i == images.count - 1) {
-//                self.sloganView.hidden = NO;
-//            }
-//        }];
+        //        [anim setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
+        //            if (i == images.count - 1) {
+        //                self.sloganView.hidden = NO;
+        //            }
+        //        }];
         anim.fromValue = [NSValue valueWithCGRect:CGRectMake(buttonX, buttonY - TAXScreenH, buttonW, buttonH)];
         anim.toValue = [NSValue valueWithCGRect:CGRectMake(buttonX, buttonY, buttonW, buttonH)];
         [button pop_addAnimation:anim forKey:nil];
@@ -63,7 +80,7 @@ static CGFloat const SpringFactor = 10;
     }
     //logo
     UIImageView *sloganView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_slogan"]];
-    [self.view addSubview:sloganView];
+    [self addSubview:sloganView];
     sloganView.hidden = YES;
     self.sloganView = sloganView;
     POPSpringAnimation *anim = [POPSpringAnimation animationWithPropertyNamed:kPOPViewCenter];
@@ -74,7 +91,7 @@ static CGFloat const SpringFactor = 10;
         sloganView.hidden = NO;
     }];
     [anim setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
-        self.view.userInteractionEnabled = YES;
+        self.userInteractionEnabled = YES;
     }];
     anim.fromValue = [NSValue valueWithCGPoint:CGPointMake(TAXScreenW * 0.5, -100)];
     anim.toValue = [NSValue valueWithCGPoint:CGPointMake(TAXScreenW * 0.5, TAXScreenH * 0.2)];
@@ -82,15 +99,17 @@ static CGFloat const SpringFactor = 10;
 
 }
 
+
+
 - (void)buttonClick:(UIButton *)button{
     switch (button.tag - 10) {
         case 0:
-            [self cancelClick:^{
+            [self cancelClickWithCompletion:^{
                 TAXLog(@"发视频");
             }];
             break;
         case 1:
-            [self cancelClick:^{
+            [self cancelClickWithCompletion:^{
                 TAXLog(@"发图片");
             }];
             break;
@@ -101,23 +120,24 @@ static CGFloat const SpringFactor = 10;
 
 - (IBAction)cancelClick {
    
-    [self cancelClick:nil];
+    [self cancelClickWithCompletion:nil];
 }
 
-- (void)cancelClick:(completion)completion{
-    int index = 2;
-    self.view.userInteractionEnabled = NO;
-    for (int i = index; i<self.view.subviews.count; i++) {
-        UIView *view = self.view.subviews[i];
+- (void)cancelClickWithCompletion:(completion)completion{
+    int index = 1;
+    self.userInteractionEnabled = NO;
+    for (int i = index; i<self.subviews.count; i++) {
+        UIView *view = self.subviews[i];
         POPBasicAnimation *anim = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
         anim.toValue = [NSValue valueWithCGPoint:CGPointMake(view.centerX, view.centerY + TAXScreenH)];
         anim.beginTime = CACurrentMediaTime() + (i - index) * AnimationDelay;
         [view pop_addAnimation:anim forKey:nil];
         [anim setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
-            if (i == self.view.subviews.count - 1) {
-                [self dismissViewControllerAnimated:NO completion:^{
-                    completion ? completion() : nil ;
-                }];
+            if (i == self.subviews.count - 1) {
+                completion ? completion() : nil ;
+                window_.hidden = YES;
+                window_ = nil;
+                
             }
         }];
     }
@@ -129,8 +149,6 @@ static CGFloat const SpringFactor = 10;
     
 }
 
-- (void)dealloc{
-    
-}
+
 
 @end

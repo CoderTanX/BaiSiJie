@@ -7,7 +7,7 @@
 //
 
 #import "TAXTabBar.h"
-#import "TAXPublishViewController.h"
+#import "TAXPublishView.h"
 @interface TAXTabBar ()
 @property (nonatomic, weak) UIButton *publishBt;
 @end
@@ -43,8 +43,9 @@
 }
 
 - (void)publishBtClick{
-    TAXPublishViewController *publicVc = [[TAXPublishViewController alloc] init];
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:publicVc animated:NO completion:nil];
+    [TAXPublishView show];
 }
+
+
 
 @end

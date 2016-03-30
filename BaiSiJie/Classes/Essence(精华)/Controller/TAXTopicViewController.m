@@ -13,6 +13,7 @@
 #import "TAXTopic.h"
 #import "MJExtension.h"
 #import "TAXTopicCell.h"
+#import "TAXCommentViewController.h"
 @interface TAXTopicViewController ()
 
 @property (nonatomic, strong) NSMutableArray *topics; ///<数据源
@@ -141,6 +142,12 @@ static NSString *const TAXTopicCellId = @"TopicCell";
     
     TAXTopic *topic = self.topics[indexPath.row];
     return topic.TopicCellH;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    TAXCommentViewController *commentViewVc = [[TAXCommentViewController alloc] init];
+    [self.navigationController pushViewController:commentViewVc animated:YES];
 }
 
 

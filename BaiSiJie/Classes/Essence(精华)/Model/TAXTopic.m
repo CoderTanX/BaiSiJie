@@ -9,7 +9,13 @@
 #import "TAXTopic.h"
 #import "NSDate+TAXAdditions.h"
 #import "MJExtension.h"
+#import "TAXUser.h"
+#include "TAXComment.h"
+#define TAXTextW  [UIScreen mainScreen].bounds.size.width - 4*TAXTopicCellMargin
 @implementation TAXTopic
+{
+    CGFloat _TopicCellH;
+}
 
 +(NSDictionary *)mj_replacedKeyFromPropertyName{
     return @{
@@ -17,6 +23,10 @@
              @"bigImage":@"image1",
              @"middleImage":@"image2"
              };
+}
+
++ (NSDictionary *)mj_objectClassInArray{
+    return @{@"top_cmt":@"TAXComment"};
 }
 
 - (NSString *)create_time{
@@ -55,25 +65,42 @@
         CGFloat topH = TAXTopicCellMargin + TAXTopicCellImageH;
         
         //中间文字高度
-        CGSize textSize = [self.text boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 4*TAXTopicCellMargin, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil].size;
+        CGSize textSize = [self.text boundingRectWithSize:CGSizeMake(TAXTextW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil].size;
         CGFloat textH = textSize.height + TAXTopicCellMargin;
         //中间图片高度
         if (self.type == TAXTopicTypePicture) {
-            CGFloat pictureH = self.height * ([UIScreen mainScreen].bounds.size.width - 4*TAXTopicCellMargin)/self.width;
+            CGFloat pictureH = self.height * (TAXTextW)/self.width;
             
             
             if (pictureH > TAXPictureMaxH) {
                 pictureH = TAXPictureClipH;
                 _bigPicture = YES;
             }
-            _TopicCellH += pictureH;
-            _pictureF = CGRectMake(TAXTopicCellMargin, topH + textH + TAXTopicCellMargin, [UIScreen mainScreen].bounds.size.width - 4*TAXTopicCellMargin, pictureH);
+            _TopicCellH += pictureH + TAXTopicCellMargin;
+            _pictureF = CGRectMake(TAXTopicCellMargin, topH + textH + TAXTopicCellMargin, TAXTextW, pictureH);
+        }else if (self.type == TAXTopicTypeVoice){
+            CGFloat voiceH = self.height * (TAXTextW)/self.width;
+            _TopicCellH += voiceH + TAXTopicCellMargin;
+            _voiceF = CGRectMake(TAXTopicCellMargin, topH + textH + TAXTopicCellMargin, TAXTextW, voiceH);
+        }else if (self.type == TAXTopicTypeVideo){
+            CGFloat videoH = self.height * (TAXTextW)/self.width;
+            _TopicCellH += videoH + TAXTopicCellMargin;
+            _videoF = CGRectMake(TAXTopicCellMargin, topH + textH + TAXTopicCellMargin, TAXTextW, videoH);
         }
+        
+        if (self.top_cmt.count) {
+            TAXComment *comment = self.top_cmt[0];
+            
+            CGFloat topCommentH = [[NSString stringWithFormat:@"%@：%@",comment.user.username,comment.content] boundingRectWithSize:CGSizeMake(TAXTextW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.height;
+            
+            _TopicCellH += topCommentH + TAXTopCommentTitleH + TAXTopicCellMargin;
+        }
+        
         
         //底部的工具条高度
         CGFloat bottomH = TAXTopicCellBottomH;
         
-        _TopicCellH += topH + textH + bottomH + 3 * TAXTopicCellMargin;
+        _TopicCellH += topH + textH + bottomH + 2 * TAXTopicCellMargin;
     }
     return _TopicCellH;
     

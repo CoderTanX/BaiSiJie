@@ -36,9 +36,22 @@
 @property (nonatomic, assign) CGFloat width; ///<图片宽度
 
 @property (nonatomic, assign) BOOL is_gif; ///<是否是gif
+
+@property (nonatomic, copy) NSString *playcount; ///<播放次数
+
+@property (nonatomic, assign) NSInteger voicetime; ///<音频时长
+
+@property (nonatomic, assign) NSInteger videotime; ///<视频时长
+
+@property (nonatomic, strong) NSArray *top_cmt; ///<热门评论的数组
+
 /**自己加的属性*/
-@property (nonatomic, assign) CGFloat TopicCellH;///<cell的高度
+@property (nonatomic, assign, readonly) CGFloat TopicCellH;///<cell的高度
 @property (nonatomic, assign) CGRect pictureF; ///<图片的frame
 @property (nonatomic, assign, getter=isBigPicture) BOOL bigPicture; ///<是否是大图 需要裁剪
 @property (nonatomic, assign) CGFloat pictureProgress; ///<进度
+@property (nonatomic, assign, readonly) CGRect voiceF; ///<声音的frame
+@property (nonatomic, assign, readonly) CGRect videoF; ///<视频的frame
+
+
 @end

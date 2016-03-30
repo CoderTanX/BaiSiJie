@@ -1,5 +1,5 @@
 //
-//  TAXPublishViewController.h
+//  TAXPublishView.h
 //  BaiSiJie
 //
 //  Created by 谭安溪 on 16/3/24.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TAXPublishViewController : UIViewController
-
+@interface TAXPublishView : UIView
++ (void)show;
 @end

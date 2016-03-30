@@ -42,15 +42,18 @@
     allVc.topticType = TAXTopicTypeAll;
     [self addChildViewController:allVc];
     
+    TAXTopicViewController *voiceVc = [[TAXTopicViewController alloc] init];
+    voiceVc.title = @"音频";
+    voiceVc.topticType = TAXTopicTypeVoice;
+    [self addChildViewController:voiceVc];
+
     TAXTopicViewController *videoVc = [[TAXTopicViewController alloc] init];
     videoVc.title = @"视频";
     videoVc.topticType  = TAXTopicTypeVideo;
     [self addChildViewController:videoVc];
     
-    TAXTopicViewController *voiceVc = [[TAXTopicViewController alloc] init];
-    voiceVc.title = @"音频";
-    voiceVc.topticType = TAXTopicTypeVoice;
-    [self addChildViewController:voiceVc];
+
+        
     
     TAXTopicViewController *pictureVc = [[TAXTopicViewController alloc] init];
     pictureVc.title = @"图片";

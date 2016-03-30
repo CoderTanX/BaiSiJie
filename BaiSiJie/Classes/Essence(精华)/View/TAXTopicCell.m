@@ -11,6 +11,10 @@
 #import "UIImageView+WebCache.h"
 #import "NSDate+TAXAdditions.h"
 #import "TAXTopicPictureView.h"
+#import "TAXTopicVoiceView.h"
+#import "TAXTopicVideoView.h"
+#import "TAXComment.h"
+#import "TAXUser.h"
 @interface TAXTopicCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *profile_imageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -20,19 +24,45 @@
 @property (weak, nonatomic) IBOutlet UIButton *repostBt;
 @property (weak, nonatomic) IBOutlet UIButton *commentBt;
 @property (weak, nonatomic) IBOutlet UILabel *text_label;
-@property (nonatomic, weak) TAXTopicPictureView *pirtureVIew; ///<中间的图片
+@property (nonatomic, weak) TAXTopicPictureView *pirtureView; ///<中间的图片
+@property (nonatomic, weak) TAXTopicVoiceView *voiceView; ///<声音视图
+@property (nonatomic, weak) TAXTopicVideoView *videoView; ///<视频视图
+@property (weak, nonatomic) IBOutlet UILabel *topCmtcontentLable;///<
+@property (weak, nonatomic) IBOutlet UIView *topCommentView;
+
 @end
 @implementation TAXTopicCell
 
-- (TAXTopicPictureView *)pirtureVIew{
+- (TAXTopicPictureView *)pirtureView{
     
-    if (!_pirtureVIew) {
+    if (!_pirtureView) {
         TAXTopicPictureView *pirtureView = [TAXTopicPictureView pictureView];
         [self.contentView addSubview:pirtureView];
-        _pirtureVIew = pirtureView;
+        _pirtureView = pirtureView;
     }
-    return _pirtureVIew;
+    return _pirtureView;
 }
+
+- (TAXTopicVoiceView *)voiceView{
+    
+    if (!_voiceView) {
+        TAXTopicVoiceView *voiceView = [TAXTopicVoiceView voiceView];
+        [self.contentView addSubview:voiceView];
+        _voiceView = voiceView;
+    }
+    return _voiceView;
+}
+
+- (TAXTopicVideoView *)videoView{
+    
+    if (!_videoView) {
+        TAXTopicVideoView *videoView = [TAXTopicVideoView videoView];
+        [self.contentView addSubview:videoView];
+        _videoView = videoView;
+    }
+    return _videoView;
+}
+
 
 - (void)awakeFromNib {
     // Initialization code
@@ -49,13 +79,37 @@
     [self setupButtonTitle:self.repostBt count:topic.repost placeholder:@"分享"];
     [self setupButtonTitle:self.commentBt count:topic.comment placeholder:@"评论"];
     self.text_label.text = topic.text;
+    if (topic.top_cmt.count) {
+    
+        TAXComment *comment = topic.top_cmt[0];
+        self.topCmtcontentLable.text = [NSString stringWithFormat:@"%@：%@",comment.user.username,comment.content];
+        self.topCommentView.hidden = NO;
+    }else{
+        self.topCommentView.hidden = YES;
+    }
     
     if (topic.type == TAXTopicTypePicture) {
-        self.pirtureVIew.frame = topic.pictureF;
-        self.pirtureVIew.topic = topic;
-        self.pirtureVIew.hidden = NO;
+        self.pirtureView.frame = topic.pictureF;
+        self.pirtureView.topic = topic;
+        self.pirtureView.hidden = NO;
+        self.voiceView.hidden = YES;
+        self.videoView.hidden = YES;
+    }else if (topic.type == TAXTopicTypeVoice){
+        self.voiceView.frame = topic.voiceF;
+        self.voiceView.topic = topic;
+        self.voiceView.hidden = NO;
+        self.pirtureView.hidden = YES;
+        self.videoView.hidden = YES;
+    }else if (topic.type == TAXTopicTypeVideo){
+        self.videoView.frame = topic.videoF;
+        self.videoView.topic = topic;
+        self.videoView.hidden = NO;
+        self.pirtureView.hidden = YES;
+        self.voiceView.hidden = YES;
     }else{
-        self.pirtureVIew.hidden = YES;
+        self.pirtureView.hidden = YES;
+        self.videoView.hidden = YES;
+        self.voiceView.hidden = YES;
     }
 }
 
