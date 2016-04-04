@@ -83,7 +83,7 @@
                 <constraint firstItem="crQ-xb-wQT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="niH-sk-NV5"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="-333" y="-138"/>
+            <point key="canvasLocation" x="-241" y="-145"/>
         </view>
     </objects>
     <resources>

@@ -20,7 +20,7 @@
 @property (nonatomic, copy) NSString *maxtime; ///<最大时间
 @property (nonatomic, assign) NSInteger page; ///<当前页
 @property (nonatomic, strong) NSDictionary *params; ///<参数
-
+@property (nonatomic, assign) NSUInteger lastSelectIndex; ///<上次点击的索引
 @end
 
 static NSString *const TAXTopicCellId = @"TopicCell";
@@ -45,7 +45,18 @@ static NSString *const TAXTopicCellId = @"TopicCell";
     [self setupTableView];
     //初始化刷新控件
     [self setupRefresh];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarClick) name:TAXTabBarDidSelectNotification object:nil];
 }
+
+
+- (void)tabBarClick{
+   
+    if ([self.view isShowingOnKeyWindow] && self.lastSelectIndex == self.tabBarController.selectedIndex) {
+        [self.tableView.mj_header beginRefreshing];
+    }
+    self.lastSelectIndex = self.tabBarController.selectedIndex;
+}
+
 /**
  *  初始化列表
  */
@@ -151,5 +162,7 @@ static NSString *const TAXTopicCellId = @"TopicCell";
     [self.navigationController pushViewController:commentViewVc animated:YES];
 }
 
-
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 @end

@@ -45,8 +45,8 @@ static NSString *const TAXCommentID = @"comment";
     self.tableView.backgroundColor = TAXGlobalBg;
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TAXCommentCell class]) bundle:nil] forCellReuseIdentifier:TAXCommentID];
-    self.tableView.estimatedRowHeight = 44;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
+//    self.tableView.estimatedRowHeight = 44;
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, TAXTopicCellMargin, 0);
     [self setupHeaderView];
     [self setupRefresh];
@@ -222,6 +222,7 @@ static NSString *const TAXCommentID = @"comment";
 #pragma mark - <UITableViewDelegate>
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     [self.view endEditing:YES];
+    [[UIMenuController sharedMenuController] setMenuVisible:NO animated:YES];
 }
 
 
@@ -235,7 +236,10 @@ static NSString *const TAXCommentID = @"comment";
     }];
 }
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    TAXComment *comment = [self commentsWithIndexPath:indexPath];
+    return comment.commentCellH;
+}
 
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -244,6 +248,40 @@ static NSString *const TAXCommentID = @"comment";
         [self.topic setValue:@0 forKeyPath:@"topicCellH"];
     }
     [self.manager invalidateSessionCancelingTasks:YES];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UIMenuController *menuVc = [UIMenuController sharedMenuController];
+    if (menuVc.isMenuVisible) {
+        [menuVc setMenuVisible:NO animated:YES];
+    }else{
+        TAXCommentCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        [cell becomeFirstResponder];
+        UIMenuItem *ding = [[UIMenuItem alloc] initWithTitle:@"顶" action:@selector(ding:)];
+        UIMenuItem *reply = [[UIMenuItem alloc] initWithTitle:@"回复" action:@selector(reply:)];
+        UIMenuItem *report = [[UIMenuItem alloc] initWithTitle:@"举报" action:@selector(report:)];
+        menuVc.menuItems = @[ding,reply,report];
+        CGRect rect = CGRectMake(0, cell.height * 0.5, cell.width, cell.height * 0.5);
+        [menuVc setTargetRect:rect inView:cell];
+        [menuVc setMenuVisible:YES animated:YES];
+    }
+    
+}
+
+- (void)ding:(UIMenuController *)menuVc{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    TAXLog(@"%@",[self commentsWithIndexPath:indexPath].content);
+}
+
+- (void)reply:(UIMenuController *)menuVc{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    TAXLog(@"%@",[self commentsWithIndexPath:indexPath].content);
+}
+
+- (void)report:(UIMenuController *)menuVc{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    TAXLog(@"%@",[self commentsWithIndexPath:indexPath].content);
 }
 
 @end

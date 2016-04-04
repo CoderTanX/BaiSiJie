@@ -23,7 +23,8 @@
 
 - (void)setUser:(TAXRecommendUser *)user{
     _user = user;
-    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:user.header] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+
+    [self.headerImageView setHeaderUrl:user.header];
     self.usernameLabel.text = user.screen_name;
     NSString *fans = nil;
     if ([user.fans_count integerValue]>10000) {

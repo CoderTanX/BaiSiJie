@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "TAXTabBarController.h"
 #import "TAXPushGuideView.h"
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -18,10 +18,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[TAXTabBarController alloc] init];
+    TAXTabBarController *tabBarController = [[TAXTabBarController alloc] init];
+    tabBarController.delegate = self;
+    self.window.rootViewController = tabBarController;
+    
     [self.window makeKeyAndVisible];
     [TAXPushGuideView show];
     return YES;
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    [[NSNotificationCenter defaultCenter] postNotificationName:TAXTabBarDidSelectNotification object:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

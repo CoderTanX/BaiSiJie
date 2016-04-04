@@ -29,7 +29,8 @@
 }
 - (void)setComment:(TAXComment *)comment{
     _comment = comment;
-    [self.profile_imageView sd_setImageWithURL:[NSURL URLWithString:comment.user.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+
+    [self.profile_imageView setHeaderUrl:comment.user.profile_image];
     self.usernameLabel.text = comment.user.username;
     self.like_countLabel.text = [NSString stringWithFormat:@"%zd",comment.like_count];
     self.contentLabel.text = comment.content;
@@ -42,9 +43,11 @@
     if (comment.voiceuri.length) {
         self.voiceButton.hidden = NO;
         [self.voiceButton setTitle:[NSString stringWithFormat:@"%zd''", comment.voicetime] forState:UIControlStateNormal];
+        self.contentLabel.hidden = YES;
 
     }else{
         self.voiceButton.hidden = YES;
+        self.contentLabel.hidden = NO;
     }
     
 }
@@ -55,5 +58,12 @@
     [super setFrame:frame];
 }
 
+- (BOOL)canBecomeFirstResponder{
+    return YES;
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender{
+    return NO;
+}
 
 @end

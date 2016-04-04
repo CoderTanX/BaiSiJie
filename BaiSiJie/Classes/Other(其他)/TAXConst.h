@@ -18,3 +18,5 @@ UIKIT_EXTERN CGFloat TAXPictureClipH;///<图片裁剪后的高度
 UIKIT_EXTERN CGFloat TAXTopCommentTitleH;///<热门评论的title的高度
 UIKIT_EXTERN NSString *TAXUserSexM;///<男
 UIKIT_EXTERN NSString *TAXUserSexF;///<女
+/** tabBar被选中的通知名字 */
+UIKIT_EXTERN NSString * const TAXTabBarDidSelectNotification;

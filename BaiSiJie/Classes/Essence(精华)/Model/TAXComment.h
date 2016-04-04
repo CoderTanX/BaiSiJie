@@ -22,4 +22,6 @@
 @property (nonatomic, strong) TAXUser *user; ///<用户模型
 @property (nonatomic, copy) NSString *ID;
 
+@property (nonatomic, assign,readonly) CGFloat commentCellH; ///<自定义属性
+
 @end

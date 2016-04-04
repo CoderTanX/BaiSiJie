@@ -74,7 +74,8 @@
 
 - (void)setTopic:(TAXTopic *)topic{
     _topic = topic;
-    [self.profile_imageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+
+    [self.profile_imageView setHeaderUrl:topic.profile_image];
     self.nameLabel.text = topic.name;
     self.create_timeLabel.text = topic.create_time;
     

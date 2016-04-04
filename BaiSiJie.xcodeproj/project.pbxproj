@@ -52,6 +52,8 @@
 		DBAEA0401CABAB25005A1CEF /* TAXCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAEA03E1CABAB25005A1CEF /* TAXCommentViewController.m */; };
 		DBAEA0411CABAB25005A1CEF /* TAXCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBAEA03F1CABAB25005A1CEF /* TAXCommentViewController.xib */; };
 		DBE0B2321CB214F800DE9261 /* TAXTopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE0B2311CB214F800DE9261 /* TAXTopWindow.m */; };
+		DBE0B2771CB25AC500DE9261 /* UIImage+TAXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE0B2761CB25AC500DE9261 /* UIImage+TAXAdditions.m */; };
+		DBE0B27A1CB266AE00DE9261 /* UIImageView+TAXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE0B2791CB266AE00DE9261 /* UIImageView+TAXAdditions.m */; };
 		DBEBCA6A1C92A573007C0D49 /* UINavigationController+Consistent.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEBCA691C92A573007C0D49 /* UINavigationController+Consistent.m */; };
 		DBED8B8B1C8D22DF0004B9FD /* TAXEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBED8B681C8D22DF0004B9FD /* TAXEssenceViewController.m */; };
 		DBED8B8C1C8D22DF0004B9FD /* TAXFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBED8B6E1C8D22DF0004B9FD /* TAXFriendTrendsViewController.m */; };
@@ -179,6 +181,10 @@
 		DBAEA03F1CABAB25005A1CEF /* TAXCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXCommentViewController.xib; sourceTree = "<group>"; };
 		DBE0B2301CB214F800DE9261 /* TAXTopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXTopWindow.h; sourceTree = "<group>"; };
 		DBE0B2311CB214F800DE9261 /* TAXTopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXTopWindow.m; sourceTree = "<group>"; };
+		DBE0B2751CB25AC500DE9261 /* UIImage+TAXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TAXAdditions.h"; sourceTree = "<group>"; };
+		DBE0B2761CB25AC500DE9261 /* UIImage+TAXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TAXAdditions.m"; sourceTree = "<group>"; };
+		DBE0B2781CB266AE00DE9261 /* UIImageView+TAXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+TAXAdditions.h"; sourceTree = "<group>"; };
+		DBE0B2791CB266AE00DE9261 /* UIImageView+TAXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+TAXAdditions.m"; sourceTree = "<group>"; };
 		DBEBCA681C92A573007C0D49 /* UINavigationController+Consistent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Consistent.h"; sourceTree = "<group>"; };
 		DBEBCA691C92A573007C0D49 /* UINavigationController+Consistent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Consistent.m"; sourceTree = "<group>"; };
 		DBED8B671C8D22DF0004B9FD /* TAXEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXEssenceViewController.h; sourceTree = "<group>"; };
@@ -575,6 +581,10 @@
 				DBED8B841C8D22DF0004B9FD /* UIView+TAXAdditions.m */,
 				DB93C7A91C9BF028009DA1B0 /* NSDate+TAXAdditions.h */,
 				DB93C7AA1C9BF028009DA1B0 /* NSDate+TAXAdditions.m */,
+				DBE0B2751CB25AC500DE9261 /* UIImage+TAXAdditions.h */,
+				DBE0B2761CB25AC500DE9261 /* UIImage+TAXAdditions.m */,
+				DBE0B2781CB266AE00DE9261 /* UIImageView+TAXAdditions.h */,
+				DBE0B2791CB266AE00DE9261 /* UIImageView+TAXAdditions.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -822,6 +832,7 @@
 				DB057A3B1CAD10A8007E8B82 /* TAXCommentCell.m in Sources */,
 				DB96CA851C8E86C5009020D6 /* SBJsonWriter.m in Sources */,
 				DB173D261C9686A900691150 /* TAXVerticalButton.m in Sources */,
+				DBE0B27A1CB266AE00DE9261 /* UIImageView+TAXAdditions.m in Sources */,
 				DB93C79E1C9BCFAC009DA1B0 /* TAXTopic.m in Sources */,
 				DB173D221C966B3800691150 /* TAXLoginRegisterViewController.m in Sources */,
 				DB96CA671C8E72A4009020D6 /* TAXRecommendViewController.m in Sources */,
@@ -845,6 +856,7 @@
 				DBAEA0401CABAB25005A1CEF /* TAXCommentViewController.m in Sources */,
 				DB93E3C01CA2699A00FDF1DD /* TAXTopicPictureView.m in Sources */,
 				DBE0B2321CB214F800DE9261 /* TAXTopWindow.m in Sources */,
+				DBE0B2771CB25AC500DE9261 /* UIImage+TAXAdditions.m in Sources */,
 				DBF4AFBB1CA385960053A92B /* TAXShowPictureViewController.m in Sources */,
 				DB96CA801C8E86C5009020D6 /* NSObject+SBJSON.m in Sources */,
 				DB85E0591C8EA95400CB911F /* TAXRecommendCategoryCell.m in Sources */,

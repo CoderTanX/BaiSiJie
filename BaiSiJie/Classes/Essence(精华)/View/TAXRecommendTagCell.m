@@ -29,7 +29,8 @@
 
 - (void)setRecommendTag:(TAXRecommendTag *)recommendTag{
     _recommendTag = recommendTag;
-    [self.image_listImageVIew sd_setImageWithURL:[NSURL URLWithString:recommendTag.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+
+    [self.image_listImageVIew setHeaderUrl:recommendTag.image_list];
     self.theme_nameLabel.text = recommendTag.theme_name;
     
     NSString *subscribe = nil;
