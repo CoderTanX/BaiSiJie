@@ -9,6 +9,7 @@
 #import "TAXEssenceViewController.h"
 #import "TAXRecommendTagViewController.h"
 #import "TAXTopicViewController.h"
+#import "TAXTopWindow.h"
 @interface TAXEssenceViewController ()<UIScrollViewDelegate>
 @property (nonatomic, weak) UIButton *currentTitleBt; ///<当前别选中的bt
 @property (nonatomic, weak) UIView *redLineView; ///<红的细线
@@ -32,6 +33,9 @@
     
     //设置顶部分类
     [self setTitleView];
+    
+    //添加顶部的window
+    [TAXTopWindow show];
 
 }
 

@@ -79,5 +79,20 @@
     return self.center.y;
 }
 
+/**
+ *  判断一个空间是否正真显示在主窗口
+ */
+- (BOOL)isShowingOnKeyWindow{
+    
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    //转换坐标系，以window窗口为坐标系
+    CGRect newF = [self.superview convertRect:self.frame toView:nil];
+    CGRect windowF = keyWindow.bounds;
+    BOOL intersects = CGRectIntersectsRect(newF, windowF);
+    return !self.isHidden && self.alpha > 0.01 && self.window == keyWindow &&intersects;
+    
+    
+    
+}
 
 @end

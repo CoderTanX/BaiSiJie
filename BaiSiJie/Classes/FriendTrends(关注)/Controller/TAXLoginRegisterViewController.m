@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
  
 }
 
@@ -34,6 +34,7 @@
 }
 
 - (IBAction)loginClose {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)registerBtClick:(UIButton *)bt {
@@ -52,9 +53,9 @@
     }];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
-}
+//- (UIStatusBarStyle)preferredStatusBarStyle{
+//    return UIStatusBarStyleLightContent;
+//}
 
 /*
 #pragma mark - Navigation

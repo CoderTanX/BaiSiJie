@@ -16,4 +16,9 @@
 @property (nonatomic, assign) CGSize size;
 @property (nonatomic, assign) CGFloat centerX;
 @property (nonatomic, assign) CGFloat centerY;
+/**
+ *  判断一个空间是否正真显示在主窗口
+ */
+- (BOOL)isShowingOnKeyWindow;
+
 @end
