@@ -16,3 +16,5 @@ UIKIT_EXTERN CGFloat TAXTopicCellBottomH;///<帖子底部的高度
 UIKIT_EXTERN CGFloat TAXPictureMaxH;///<图片的最高的高度
 UIKIT_EXTERN CGFloat TAXPictureClipH;///<图片裁剪后的高度
 UIKIT_EXTERN CGFloat TAXTopCommentTitleH;///<热门评论的title的高度
+UIKIT_EXTERN NSString *TAXUserSexM;///<男
+UIKIT_EXTERN NSString *TAXUserSexF;///<女

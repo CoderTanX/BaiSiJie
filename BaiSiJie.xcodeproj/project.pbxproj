@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB057A3B1CAD10A8007E8B82 /* TAXCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB057A391CAD10A8007E8B82 /* TAXCommentCell.m */; };
+		DB057A3C1CAD10A8007E8B82 /* TAXCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB057A3A1CAD10A8007E8B82 /* TAXCommentCell.xib */; };
 		DB0F06231C8FD37C0073979B /* TAXRecommendUser.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0F06221C8FD37C0073979B /* TAXRecommendUser.m */; };
 		DB0F06271C8FECCF0073979B /* TAXRecommendUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0F06251C8FECCF0073979B /* TAXRecommendUserCell.m */; };
 		DB0F06281C8FECCF0073979B /* TAXRecommendUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB0F06261C8FECCF0073979B /* TAXRecommendUserCell.xib */; };
@@ -93,6 +95,9 @@
 		6D902A3880D0A5BBC32EFF6E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E0E34C3F2B0DE1864965D6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7E229A9B79B41C97E1D8448E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DB057A381CAD10A8007E8B82 /* TAXCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXCommentCell.h; sourceTree = "<group>"; };
+		DB057A391CAD10A8007E8B82 /* TAXCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXCommentCell.m; sourceTree = "<group>"; };
+		DB057A3A1CAD10A8007E8B82 /* TAXCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXCommentCell.xib; sourceTree = "<group>"; };
 		DB0F06211C8FD37C0073979B /* TAXRecommendUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXRecommendUser.h; sourceTree = "<group>"; };
 		DB0F06221C8FD37C0073979B /* TAXRecommendUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXRecommendUser.m; sourceTree = "<group>"; };
 		DB0F06241C8FECCF0073979B /* TAXRecommendUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXRecommendUserCell.h; sourceTree = "<group>"; };
@@ -414,6 +419,9 @@
 				DBEFD3301CA9042F0043EEC0 /* TAXTopicVideoView.h */,
 				DBEFD3311CA9042F0043EEC0 /* TAXTopicVideoView.m */,
 				DBEFD3331CA904600043EEC0 /* TAXTopicVideoView.xib */,
+				DB057A381CAD10A8007E8B82 /* TAXCommentCell.h */,
+				DB057A391CAD10A8007E8B82 /* TAXCommentCell.m */,
+				DB057A3A1CAD10A8007E8B82 /* TAXCommentCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -706,6 +714,7 @@
 				DBFDB7B31C8D7F8000B2BE8C /* TAXFriendTrendsViewController.xib in Resources */,
 				DB0F06281C8FECCF0073979B /* TAXRecommendUserCell.xib in Resources */,
 				DBEFD3341CA904600043EEC0 /* TAXTopicVideoView.xib in Resources */,
+				DB057A3C1CAD10A8007E8B82 /* TAXCommentCell.xib in Resources */,
 				DB5C93E81C8C0DB8004A6E93 /* Assets.xcassets in Resources */,
 				DB5BEB971C97A3A100269E4C /* TAXPushGuideView.xib in Resources */,
 				DBAEA0411CABAB25005A1CEF /* TAXCommentViewController.xib in Resources */,
@@ -805,6 +814,7 @@
 				DBED8B8B1C8D22DF0004B9FD /* TAXEssenceViewController.m in Sources */,
 				DB173D291C96A93C00691150 /* TAXTextField.m in Sources */,
 				DBEFD32D1CA8DEAB0043EEC0 /* TAXTopicVoiceView.m in Sources */,
+				DB057A3B1CAD10A8007E8B82 /* TAXCommentCell.m in Sources */,
 				DB96CA851C8E86C5009020D6 /* SBJsonWriter.m in Sources */,
 				DB173D261C9686A900691150 /* TAXVerticalButton.m in Sources */,
 				DB93C79E1C9BCFAC009DA1B0 /* TAXTopic.m in Sources */,

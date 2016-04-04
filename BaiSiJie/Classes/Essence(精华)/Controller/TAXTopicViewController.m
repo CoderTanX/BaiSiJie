@@ -141,12 +141,13 @@ static NSString *const TAXTopicCellId = @"TopicCell";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     TAXTopic *topic = self.topics[indexPath.row];
-    return topic.TopicCellH;
+    return topic.topicCellH;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     TAXCommentViewController *commentViewVc = [[TAXCommentViewController alloc] init];
+    commentViewVc.topic = self.topics[indexPath.row];
     [self.navigationController pushViewController:commentViewVc animated:YES];
 }
 

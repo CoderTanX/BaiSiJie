@@ -8,3 +8,5 @@ CGFloat TAXTopicCellBottomH = 44;
 CGFloat TAXPictureMaxH = 1000;
 CGFloat TAXPictureClipH = 300;
 CGFloat TAXTopCommentTitleH = 18;
+NSString *TAXUserSexM = @"m";///<男
+NSString *TAXUserSexF = @"f";///<女

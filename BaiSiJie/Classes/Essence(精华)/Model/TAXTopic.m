@@ -14,20 +14,22 @@
 #define TAXTextW  [UIScreen mainScreen].bounds.size.width - 4*TAXTopicCellMargin
 @implementation TAXTopic
 {
-    CGFloat _TopicCellH;
+    CGFloat _topicCellH;
 }
 
 +(NSDictionary *)mj_replacedKeyFromPropertyName{
     return @{
              @"smallImage":@"image0",
              @"bigImage":@"image1",
-             @"middleImage":@"image2"
+             @"middleImage":@"image2",
+             @"ID":@"id",
+             @"top_cmt":@"top_cmt[0]"
              };
 }
 
-+ (NSDictionary *)mj_objectClassInArray{
-    return @{@"top_cmt":@"TAXComment"};
-}
+//+ (NSDictionary *)mj_objectClassInArray{
+//    return @{@"top_cmt":@"TAXComment"};
+//}
 
 - (NSString *)create_time{
     
@@ -58,9 +60,9 @@
 
 }
 
-- (CGFloat)TopicCellH{
+- (CGFloat)topicCellH{
     
-    if (!_TopicCellH) {
+    if (!_topicCellH) {
         //顶部高度
         CGFloat topH = TAXTopicCellMargin + TAXTopicCellImageH;
         
@@ -76,33 +78,31 @@
                 pictureH = TAXPictureClipH;
                 _bigPicture = YES;
             }
-            _TopicCellH += pictureH + TAXTopicCellMargin;
+            _topicCellH += pictureH + TAXTopicCellMargin;
             _pictureF = CGRectMake(TAXTopicCellMargin, topH + textH + TAXTopicCellMargin, TAXTextW, pictureH);
         }else if (self.type == TAXTopicTypeVoice){
             CGFloat voiceH = self.height * (TAXTextW)/self.width;
-            _TopicCellH += voiceH + TAXTopicCellMargin;
+            _topicCellH += voiceH + TAXTopicCellMargin;
             _voiceF = CGRectMake(TAXTopicCellMargin, topH + textH + TAXTopicCellMargin, TAXTextW, voiceH);
         }else if (self.type == TAXTopicTypeVideo){
             CGFloat videoH = self.height * (TAXTextW)/self.width;
-            _TopicCellH += videoH + TAXTopicCellMargin;
+            _topicCellH += videoH + TAXTopicCellMargin;
             _videoF = CGRectMake(TAXTopicCellMargin, topH + textH + TAXTopicCellMargin, TAXTextW, videoH);
         }
         
-        if (self.top_cmt.count) {
-            TAXComment *comment = self.top_cmt[0];
+        if (self.top_cmt) {
+            CGFloat topCommentH = [[NSString stringWithFormat:@"%@：%@",self.top_cmt.user.username,self.top_cmt.content] boundingRectWithSize:CGSizeMake(TAXTextW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.height;
             
-            CGFloat topCommentH = [[NSString stringWithFormat:@"%@：%@",comment.user.username,comment.content] boundingRectWithSize:CGSizeMake(TAXTextW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.height;
-            
-            _TopicCellH += topCommentH + TAXTopCommentTitleH + TAXTopicCellMargin;
+            _topicCellH += topCommentH + TAXTopCommentTitleH + TAXTopicCellMargin;
         }
         
         
         //底部的工具条高度
         CGFloat bottomH = TAXTopicCellBottomH;
         
-        _TopicCellH += topH + textH + bottomH + 2 * TAXTopicCellMargin;
+        _topicCellH += topH + textH + bottomH + 2 * TAXTopicCellMargin;
     }
-    return _TopicCellH;
+    return _topicCellH;
     
 }
 

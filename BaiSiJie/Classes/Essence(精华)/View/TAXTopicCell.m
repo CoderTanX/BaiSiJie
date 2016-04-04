@@ -63,6 +63,10 @@
     return _videoView;
 }
 
++ (instancetype)topicCell{
+    return [[[NSBundle mainBundle]loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
+}
+
 
 - (void)awakeFromNib {
     // Initialization code
@@ -79,10 +83,8 @@
     [self setupButtonTitle:self.repostBt count:topic.repost placeholder:@"分享"];
     [self setupButtonTitle:self.commentBt count:topic.comment placeholder:@"评论"];
     self.text_label.text = topic.text;
-    if (topic.top_cmt.count) {
-    
-        TAXComment *comment = topic.top_cmt[0];
-        self.topCmtcontentLable.text = [NSString stringWithFormat:@"%@：%@",comment.user.username,comment.content];
+    if (topic.top_cmt) {
+        self.topCmtcontentLable.text = [NSString stringWithFormat:@"%@：%@",topic.top_cmt.user.username,topic.top_cmt.content];
         self.topCommentView.hidden = NO;
     }else{
         self.topCommentView.hidden = YES;

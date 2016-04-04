@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class TAXComment;
 @interface TAXTopic : NSObject
+
+@property (nonatomic, copy) NSString *ID; ///<段子id
 /** 名称 */
 @property (nonatomic, copy) NSString *name;
 /** 头像 */
@@ -43,10 +45,10 @@
 
 @property (nonatomic, assign) NSInteger videotime; ///<视频时长
 
-@property (nonatomic, strong) NSArray *top_cmt; ///<热门评论的数组
+@property (nonatomic, strong) TAXComment *top_cmt; ///<热门评论的数组
 
 /**自己加的属性*/
-@property (nonatomic, assign, readonly) CGFloat TopicCellH;///<cell的高度
+@property (nonatomic, assign, readonly) CGFloat topicCellH;///<cell的高度
 @property (nonatomic, assign) CGRect pictureF; ///<图片的frame
 @property (nonatomic, assign, getter=isBigPicture) BOOL bigPicture; ///<是否是大图 需要裁剪
 @property (nonatomic, assign) CGFloat pictureProgress; ///<进度

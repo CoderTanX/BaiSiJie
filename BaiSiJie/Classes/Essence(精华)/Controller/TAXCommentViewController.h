@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class TAXTopic;
 @interface TAXCommentViewController : UIViewController
-
+@property (nonatomic, strong) TAXTopic *topic; ///<帖子模型
 @end

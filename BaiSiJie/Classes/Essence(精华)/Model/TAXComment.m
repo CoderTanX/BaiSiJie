@@ -7,7 +7,10 @@
 //
 
 #import "TAXComment.h"
-
+#import "MJExtension.h"
 @implementation TAXComment
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return @{@"ID":@"id"};
+}
 @end
