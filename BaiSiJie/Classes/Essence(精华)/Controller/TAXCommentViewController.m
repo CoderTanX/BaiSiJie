@@ -41,7 +41,7 @@ static NSString *const TAXCommentID = @"comment";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"评论";
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    [TAXNoteCenter addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     self.tableView.backgroundColor = TAXGlobalBg;
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TAXCommentCell class]) bundle:nil] forCellReuseIdentifier:TAXCommentID];
@@ -242,7 +242,7 @@ static NSString *const TAXCommentID = @"comment";
 }
 
 - (void)dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [TAXNoteCenter removeObserver:self];
     if (self.saved_top_cmt) {
         self.topic.top_cmt = self.saved_top_cmt;
         [self.topic setValue:@0 forKeyPath:@"topicCellH"];

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 谭安溪. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "TAXEssenceViewController.h"
 
-@interface TAXNewViewController : UIViewController
+@interface TAXNewViewController : TAXEssenceViewController
 
 @end

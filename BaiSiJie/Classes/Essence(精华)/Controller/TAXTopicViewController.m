@@ -14,6 +14,7 @@
 #import "MJExtension.h"
 #import "TAXTopicCell.h"
 #import "TAXCommentViewController.h"
+#import "TAXNewViewController.h"
 @interface TAXTopicViewController ()
 
 @property (nonatomic, strong) NSMutableArray *topics; ///<数据源
@@ -45,7 +46,7 @@ static NSString *const TAXTopicCellId = @"TopicCell";
     [self setupTableView];
     //初始化刷新控件
     [self setupRefresh];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarClick) name:TAXTabBarDidSelectNotification object:nil];
+    [TAXNoteCenter addObserver:self selector:@selector(tabBarClick) name:TAXTabBarDidSelectNotification object:nil];
 }
 
 
@@ -81,6 +82,10 @@ static NSString *const TAXTopicCellId = @"TopicCell";
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopics)];
 }
 
+- (NSString *)a{
+    return [self.parentViewController isKindOfClass:[TAXNewViewController class]]?@"newlist":@"list";
+}
+
 /**
  * 下拉刷新
  */
@@ -88,7 +93,7 @@ static NSString *const TAXTopicCellId = @"TopicCell";
     [self.tableView.mj_footer endRefreshing];
     self.page = 0;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"a"] = @"list";
+    params[@"a"] = self.a;
     params[@"c"] = @"data";
     params[@"type"] = @(self.topticType);
     params[@"page"] = @(self.page);
@@ -115,7 +120,7 @@ static NSString *const TAXTopicCellId = @"TopicCell";
 - (void)loadMoreTopics{
     [self.tableView.mj_header endRefreshing];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"a"] = @"list";
+    params[@"a"] = self.a;
     params[@"c"] = @"data";
     params[@"type"] = @(self.topticType);
     params[@"maxtime"] = self.maxtime;
@@ -138,7 +143,7 @@ static NSString *const TAXTopicCellId = @"TopicCell";
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+    self.tableView.mj_footer.hidden = (self.topics.count ==0);
     return self.topics.count;
 }
 
@@ -163,6 +168,6 @@ static NSString *const TAXTopicCellId = @"TopicCell";
 }
 
 - (void)dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [TAXNoteCenter removeObserver:self];
 }
 @end

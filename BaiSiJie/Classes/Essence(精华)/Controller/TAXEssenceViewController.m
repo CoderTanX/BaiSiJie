@@ -10,6 +10,7 @@
 #import "TAXRecommendTagViewController.h"
 #import "TAXTopicViewController.h"
 #import "TAXTopWindow.h"
+
 @interface TAXEssenceViewController ()<UIScrollViewDelegate>
 @property (nonatomic, weak) UIButton *currentTitleBt; ///<当前别选中的bt
 @property (nonatomic, weak) UIView *redLineView; ///<红的细线

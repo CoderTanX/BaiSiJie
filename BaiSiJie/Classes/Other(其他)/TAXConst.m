@@ -12,3 +12,4 @@ NSString *TAXUserSexM = @"m";///<男
 NSString *TAXUserSexF = @"f";///<女
 /** tabBar被选中的通知名字 */
 NSString * const TAXTabBarDidSelectNotification = @"TAXTabBarDidSelectNotification";
+NSInteger const TAXMeSquareMaxCols = 4;///<我模块的一行最多个数

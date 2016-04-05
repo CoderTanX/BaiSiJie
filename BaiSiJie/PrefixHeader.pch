@@ -27,6 +27,8 @@
 
 #define TAXWeakSelf __weak typeof(self)weakSelf = self;
 
+#define TAXNoteCenter [NSNotificationCenter defaultCenter]
+
 #define SERVICE_URL @"http://api.budejie.com/api/api_open.php"
 
 #define TAXScreenW [UIScreen mainScreen].bounds.size.width

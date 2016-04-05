@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TAXMeViewController : UIViewController
+@interface TAXMeViewController : UITableViewController
 
 @end

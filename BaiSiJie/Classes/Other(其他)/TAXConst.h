@@ -20,3 +20,5 @@ UIKIT_EXTERN NSString *TAXUserSexM;///<男
 UIKIT_EXTERN NSString *TAXUserSexF;///<女
 /** tabBar被选中的通知名字 */
 UIKIT_EXTERN NSString * const TAXTabBarDidSelectNotification;
+
+UIKIT_EXTERN NSInteger const TAXMeSquareMaxCols;///<我模块的一行最多个数

@@ -7,7 +7,7 @@
 //
 
 #import "TAXNavigationController.h"
-
+#import "TAXWebViewController.h"
 @implementation TAXNavigationController
 
 + (void)initialize{
@@ -24,7 +24,7 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
    
-    if (self.viewControllers.count>0) {
+    if (self.viewControllers.count>0&&![viewController isKindOfClass:[TAXWebViewController class]]) {
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
@@ -37,7 +37,10 @@
         [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         viewController.hidesBottomBarWhenPushed = YES;
+    }else if ([viewController isKindOfClass:[TAXWebViewController class]]){
+        viewController.hidesBottomBarWhenPushed = YES;
     }
+    
     [super pushViewController:viewController animated:YES];
     
 }

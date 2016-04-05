@@ -28,7 +28,7 @@
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-    [[NSNotificationCenter defaultCenter] postNotificationName:TAXTabBarDidSelectNotification object:nil];
+    [TAXNoteCenter postNotificationName:TAXTabBarDidSelectNotification object:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

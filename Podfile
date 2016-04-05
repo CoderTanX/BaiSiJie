@@ -6,3 +6,4 @@ pod "SDWebImage"
 pod "MJRefresh"
 pod "DACircularProgress"
 pod "pop"
+pod 'NJKWebViewProgress'
