@@ -11,9 +11,24 @@
 @implementation TAXNavigationController
 
 + (void)initialize{
-//    UIBarButtonItem *item = [UIBarButtonItem appearance];
-//    [item setBackButtonBackgroundImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-//    [item setBackButtonBackgroundImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+  
+    UINavigationBar *bar = [UINavigationBar appearance];
+    [bar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+
+    bar.titleTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:20]};
+    
+    // 设置item
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+    // UIControlStateNormal
+    NSMutableDictionary *itemAttrs = [NSMutableDictionary dictionary];
+    itemAttrs[NSForegroundColorAttributeName] = [UIColor blackColor];
+    itemAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:17];
+    [item setTitleTextAttributes:itemAttrs forState:UIControlStateNormal];
+    // UIControlStateDisabled
+    NSMutableDictionary *itemDisabledAttrs = [NSMutableDictionary dictionary];
+    itemDisabledAttrs[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
+    [item setTitleTextAttributes:itemDisabledAttrs forState:UIControlStateDisabled];
+    
 }
 
 - (void)viewDidLoad{

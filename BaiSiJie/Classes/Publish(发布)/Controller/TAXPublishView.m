@@ -9,7 +9,8 @@
 #import "TAXPublishView.h"
 #import "TAXVerticalButton.h"
 #import "POP.h"
-
+#import "TAXPostWordViewController.h"
+#import "TAXNavigationController.h"
 typedef void(^completion)();
 @interface TAXPublishView ()
 @property (nonatomic, weak) UIImageView *sloganView; ///<logo
@@ -111,6 +112,14 @@ static UIWindow * window_;
         case 1:
             [self cancelClickWithCompletion:^{
                 TAXLog(@"发图片");
+            }];
+            break;
+        case 2:
+            [self cancelClickWithCompletion:^{
+                TAXPostWordViewController *postwordVc = [[TAXPostWordViewController alloc]init];
+                TAXNavigationController *nav = [[TAXNavigationController alloc] initWithRootViewController:postwordVc];
+                UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
+                [root presentViewController:nav animated:YES completion:nil];
             }];
             break;
         default:

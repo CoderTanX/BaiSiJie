@@ -8,6 +8,8 @@
 
 #import "TAXTabBar.h"
 #import "TAXPublishView.h"
+#import "TAXPostWordViewController.h"
+#import "TAXNavigationController.h"
 @interface TAXTabBar ()
 @property (nonatomic, weak) UIButton *publishBt;
 @end
@@ -43,7 +45,10 @@
 }
 
 - (void)publishBtClick{
-    [TAXPublishView show];
+//    [TAXPublishView show];
+    TAXNavigationController *nav = [[TAXNavigationController alloc] initWithRootViewController:[[TAXPostWordViewController alloc]init]];
+    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
+    [root presentViewController:nav animated:YES completion:nil];
 }
 
 
