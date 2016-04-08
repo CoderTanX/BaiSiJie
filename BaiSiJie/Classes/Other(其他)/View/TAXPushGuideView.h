@@ -10,8 +10,6 @@
 
 @interface TAXPushGuideView : UIView
 
-+ (instancetype)pushGuideView;
-
 + (void)show;
 
 @end

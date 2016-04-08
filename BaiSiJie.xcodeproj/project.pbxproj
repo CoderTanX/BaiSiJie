@@ -24,6 +24,8 @@
 		DB3621291CB4B0B5004486ED /* TAXPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3621251CB4B0B5004486ED /* TAXPublishView.m */; };
 		DB36212A1CB4B0B5004486ED /* TAXPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB3621261CB4B0B5004486ED /* TAXPublishView.xib */; };
 		DB36212D1CB4D6EC004486ED /* TAXPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB36212C1CB4D6EC004486ED /* TAXPlaceholderTextView.m */; };
+		DB3621301CB4F5FD004486ED /* TAXAddToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DB36212F1CB4F5FD004486ED /* TAXAddToolbar.m */; };
+		DB3621321CB4F60B004486ED /* TAXAddToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB3621311CB4F60B004486ED /* TAXAddToolbar.xib */; };
 		DB5BEB951C97A39500269E4C /* TAXPushGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5BEB941C97A39500269E4C /* TAXPushGuideView.m */; };
 		DB5BEB971C97A3A100269E4C /* TAXPushGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB5BEB961C97A3A100269E4C /* TAXPushGuideView.xib */; };
 		DB5C93DD1C8C0DB8004A6E93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5C93DC1C8C0DB8004A6E93 /* main.m */; };
@@ -33,6 +35,9 @@
 		DB85E0591C8EA95400CB911F /* TAXRecommendCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85E0571C8EA95400CB911F /* TAXRecommendCategoryCell.m */; };
 		DB85E05A1C8EA95400CB911F /* TAXRecommendCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB85E0581C8EA95400CB911F /* TAXRecommendCategoryCell.xib */; };
 		DB85E05D1C8EAAE800CB911F /* TAXRecommendCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85E05C1C8EAAE800CB911F /* TAXRecommendCategory.m */; };
+		DB901CBF1CB5F983001C4385 /* TAXAddTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB901CBE1CB5F983001C4385 /* TAXAddTagViewController.m */; };
+		DB901CC21CB61231001C4385 /* TAXTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DB901CC11CB61231001C4385 /* TAXTagButton.m */; };
+		DB901CC51CB645C8001C4385 /* TAXTagTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DB901CC41CB645C8001C4385 /* TAXTagTextField.m */; };
 		DB93C79B1C9BB219009DA1B0 /* TAXConst.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93C79A1C9BB219009DA1B0 /* TAXConst.m */; };
 		DB93C79E1C9BCFAC009DA1B0 /* TAXTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93C79D1C9BCFAC009DA1B0 /* TAXTopic.m */; };
 		DB93C7A71C9BE060009DA1B0 /* TAXTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93C7A51C9BE060009DA1B0 /* TAXTopicCell.m */; };
@@ -135,6 +140,9 @@
 		DB3621261CB4B0B5004486ED /* TAXPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXPublishView.xib; sourceTree = "<group>"; };
 		DB36212B1CB4D6EC004486ED /* TAXPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXPlaceholderTextView.h; sourceTree = "<group>"; };
 		DB36212C1CB4D6EC004486ED /* TAXPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXPlaceholderTextView.m; sourceTree = "<group>"; };
+		DB36212E1CB4F5FD004486ED /* TAXAddToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXAddToolbar.h; sourceTree = "<group>"; };
+		DB36212F1CB4F5FD004486ED /* TAXAddToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXAddToolbar.m; sourceTree = "<group>"; };
+		DB3621311CB4F60B004486ED /* TAXAddToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXAddToolbar.xib; sourceTree = "<group>"; };
 		DB5BEB931C97A39500269E4C /* TAXPushGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXPushGuideView.h; sourceTree = "<group>"; };
 		DB5BEB941C97A39500269E4C /* TAXPushGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXPushGuideView.m; sourceTree = "<group>"; };
 		DB5BEB961C97A3A100269E4C /* TAXPushGuideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXPushGuideView.xib; sourceTree = "<group>"; };
@@ -154,6 +162,12 @@
 		DB85E0581C8EA95400CB911F /* TAXRecommendCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAXRecommendCategoryCell.xib; sourceTree = "<group>"; };
 		DB85E05B1C8EAAE800CB911F /* TAXRecommendCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXRecommendCategory.h; sourceTree = "<group>"; };
 		DB85E05C1C8EAAE800CB911F /* TAXRecommendCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXRecommendCategory.m; sourceTree = "<group>"; };
+		DB901CBD1CB5F983001C4385 /* TAXAddTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXAddTagViewController.h; sourceTree = "<group>"; };
+		DB901CBE1CB5F983001C4385 /* TAXAddTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXAddTagViewController.m; sourceTree = "<group>"; };
+		DB901CC01CB61231001C4385 /* TAXTagButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXTagButton.h; sourceTree = "<group>"; };
+		DB901CC11CB61231001C4385 /* TAXTagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXTagButton.m; sourceTree = "<group>"; };
+		DB901CC31CB645C8001C4385 /* TAXTagTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXTagTextField.h; sourceTree = "<group>"; };
+		DB901CC41CB645C8001C4385 /* TAXTagTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXTagTextField.m; sourceTree = "<group>"; };
 		DB93C7991C9BB219009DA1B0 /* TAXConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXConst.h; sourceTree = "<group>"; };
 		DB93C79A1C9BB219009DA1B0 /* TAXConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAXConst.m; sourceTree = "<group>"; };
 		DB93C79C1C9BCFAC009DA1B0 /* TAXTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAXTopic.h; sourceTree = "<group>"; };
@@ -296,6 +310,8 @@
 				DB3621261CB4B0B5004486ED /* TAXPublishView.xib */,
 				DB3621221CB4B0B5004486ED /* TAXPostWordViewController.h */,
 				DB3621231CB4B0B5004486ED /* TAXPostWordViewController.m */,
+				DB901CBD1CB5F983001C4385 /* TAXAddTagViewController.h */,
+				DB901CBE1CB5F983001C4385 /* TAXAddTagViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -305,6 +321,13 @@
 			children = (
 				DB36212B1CB4D6EC004486ED /* TAXPlaceholderTextView.h */,
 				DB36212C1CB4D6EC004486ED /* TAXPlaceholderTextView.m */,
+				DB36212E1CB4F5FD004486ED /* TAXAddToolbar.h */,
+				DB36212F1CB4F5FD004486ED /* TAXAddToolbar.m */,
+				DB3621311CB4F60B004486ED /* TAXAddToolbar.xib */,
+				DB901CC01CB61231001C4385 /* TAXTagButton.h */,
+				DB901CC11CB61231001C4385 /* TAXTagButton.m */,
+				DB901CC31CB645C8001C4385 /* TAXTagTextField.h */,
+				DB901CC41CB645C8001C4385 /* TAXTagTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -805,6 +828,7 @@
 				DB96CA681C8E72A4009020D6 /* TAXRecommendViewController.xib in Resources */,
 				DB36212A1CB4B0B5004486ED /* TAXPublishView.xib in Resources */,
 				DB173D191C965B7A00691150 /* TAXRecommendTagCell.xib in Resources */,
+				DB3621321CB4F60B004486ED /* TAXAddToolbar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,6 +907,8 @@
 				DB36212D1CB4D6EC004486ED /* TAXPlaceholderTextView.m in Sources */,
 				DBB97D621CB39D1C00265C11 /* TAXWebViewController.m in Sources */,
 				DB5BEB951C97A39500269E4C /* TAXPushGuideView.m in Sources */,
+				DB901CC51CB645C8001C4385 /* TAXTagTextField.m in Sources */,
+				DB901CC21CB61231001C4385 /* TAXTagButton.m in Sources */,
 				DBEFD3321CA9042F0043EEC0 /* TAXTopicVideoView.m in Sources */,
 				DB173D181C965B7A00691150 /* TAXRecommendTagCell.m in Sources */,
 				DBEBCA6A1C92A573007C0D49 /* UINavigationController+Consistent.m in Sources */,
@@ -890,6 +916,7 @@
 				DBB97D591CB38FEE00265C11 /* TAXSquareButton.m in Sources */,
 				DB96CA711C8E8699009020D6 /* GGNetworking.m in Sources */,
 				DB5C93DD1C8C0DB8004A6E93 /* main.m in Sources */,
+				DB901CBF1CB5F983001C4385 /* TAXAddTagViewController.m in Sources */,
 				DBED8B8F1C8D22DF0004B9FD /* AppDelegate.m in Sources */,
 				DBB97D531CB369FA00265C11 /* TAXSquare.m in Sources */,
 				DBED8B8B1C8D22DF0004B9FD /* TAXEssenceViewController.m in Sources */,
@@ -905,6 +932,7 @@
 				DB173D221C966B3800691150 /* TAXLoginRegisterViewController.m in Sources */,
 				DB96CA671C8E72A4009020D6 /* TAXRecommendViewController.m in Sources */,
 				DB93C79B1C9BB219009DA1B0 /* TAXConst.m in Sources */,
+				DB3621301CB4F5FD004486ED /* TAXAddToolbar.m in Sources */,
 				DB93C7A71C9BE060009DA1B0 /* TAXTopicCell.m in Sources */,
 				DB173D141C96571500691150 /* TAXRecommendTag.m in Sources */,
 				DB96CA831C8E86C5009020D6 /* SBJsonBase.m in Sources */,

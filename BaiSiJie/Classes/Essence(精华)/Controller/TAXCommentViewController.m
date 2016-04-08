@@ -115,7 +115,7 @@ static NSString *const TAXCommentID = @"comment";
 
 - (void)setupHeaderView{
     
-    TAXTopicCell *headerView = [TAXTopicCell topicCell];
+    TAXTopicCell *headerView = [TAXTopicCell viewFromXib];
     if (self.topic.top_cmt) {
         self.saved_top_cmt = self.topic.top_cmt;
         self.topic.top_cmt = nil;

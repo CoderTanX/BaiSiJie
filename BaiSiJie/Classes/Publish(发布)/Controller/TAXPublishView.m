@@ -29,15 +29,11 @@ static UIWindow * window_;
     window_.hidden = NO;
     window_.backgroundColor = [UIColor whiteColor];
     
-    TAXPublishView *publishView = [self publicView];
+    TAXPublishView *publishView = [self viewFromXib];
     publishView.frame = window_.bounds;
     [window_ addSubview:publishView];
 }
 
-
-+(instancetype)publicView{
-    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil]lastObject];
-}
 
 - (void)awakeFromNib{
     self.userInteractionEnabled = NO;

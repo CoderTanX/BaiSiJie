@@ -21,10 +21,6 @@
 @end
 @implementation TAXTopicPictureView
 
-+ (instancetype)pictureView{
-    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
-    
-}
 
 - (void)awakeFromNib{
     self.autoresizingMask = UIViewAutoresizingNone;

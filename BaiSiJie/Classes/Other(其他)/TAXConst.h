@@ -22,3 +22,5 @@ UIKIT_EXTERN NSString *TAXUserSexF;///<女
 UIKIT_EXTERN NSString * const TAXTabBarDidSelectNotification;
 
 UIKIT_EXTERN NSInteger const TAXMeSquareMaxCols;///<我模块的一行最多个数
+
+UIKIT_EXTERN CGFloat TAXTagMargin;///<增加标签的边距

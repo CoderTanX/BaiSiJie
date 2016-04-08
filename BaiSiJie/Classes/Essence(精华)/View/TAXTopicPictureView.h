@@ -10,5 +10,4 @@
 @class TAXTopic;
 @interface TAXTopicPictureView : UIView
 @property (nonatomic, strong) TAXTopic *topic; ///<模型
-+ (instancetype)pictureView;
 @end

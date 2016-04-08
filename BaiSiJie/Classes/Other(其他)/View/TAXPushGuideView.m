@@ -18,7 +18,7 @@ static NSString *const VersionKey = @"CFBundleShortVersionString";
     NSString *currentVersion = [NSBundle mainBundle].infoDictionary[VersionKey];
     NSString *sanboxVersion = [[NSUserDefaults standardUserDefaults] objectForKey:VersionKey];
     if (![currentVersion isEqualToString:sanboxVersion]) {
-        TAXPushGuideView *pushGuideView = [self pushGuideView];
+        TAXPushGuideView *pushGuideView = [self viewFromXib];
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
         pushGuideView.frame = window.frame;
         [window addSubview:pushGuideView];        
@@ -29,9 +29,6 @@ static NSString *const VersionKey = @"CFBundleShortVersionString";
 
 }
 
-+ (instancetype)pushGuideView{
-    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
-}
 
 - (IBAction)removeGuideView {
     [self removeFromSuperview];

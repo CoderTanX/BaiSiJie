@@ -21,4 +21,8 @@
  */
 - (BOOL)isShowingOnKeyWindow;
 
+/**
+ *  从xib中创建
+ */
++ (instancetype)viewFromXib;
 @end

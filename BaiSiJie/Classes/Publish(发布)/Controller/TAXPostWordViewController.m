@@ -8,11 +8,23 @@
 
 #import "TAXPostWordViewController.h"
 #import "TAXPlaceholderTextView.h"
-@interface TAXPostWordViewController ()
-@property (nonatomic, weak) TAXPlaceholderTextView *textView; ///<<#注释#>
+#import "TAXAddToolbar.h"
+#import "TAXAddTagViewController.h"
+@interface TAXPostWordViewController ()<TAXAddToolbarDelegate>
+@property (nonatomic, weak) TAXPlaceholderTextView *textView;
+@property (nonatomic, weak) TAXAddToolbar *addToolbar; ///<底部的工具栏
+@property (nonatomic, strong) NSMutableArray *tags; ///<标签数组
 @end
 
 @implementation TAXPostWordViewController
+
+- (NSMutableArray *)tags{
+    
+    if (!_tags) {
+        _tags = [NSMutableArray arrayWithObjects:@"吐槽",@"搞笑搞笑搞笑搞笑",@"搞笑搞笑搞",@"搞笑搞笑搞笑", nil];
+    }
+    return _tags;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,6 +33,8 @@
     [self setupNav];
     //添加textView
     [self setupTextView];
+    //添加底部工具栏
+    [self setupAddToolbar];
 }
 /**
  *  设置导航栏
@@ -45,12 +59,40 @@
     self.textView = textView;
 }
 
+- (void)setupAddToolbar{
+    TAXAddToolbar *addToolbar = [TAXAddToolbar viewFromXib];
+    
+    addToolbar.delegate = self;
+    addToolbar.width = TAXScreenW;
+    addToolbar.y = TAXScreenH - addToolbar.height;
+    [self.view addSubview:addToolbar];
+    self.addToolbar = addToolbar;
+    [TAXNoteCenter addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+}
 
+- (void)addToolbarAddTagButttonDidClicked:(TAXAddToolbar *)addToolbar{
+    TAXAddTagViewController *addTagVc = [[TAXAddTagViewController alloc] init];
+    addTagVc.tags = self.tags;
+    [self.navigationController pushViewController:addTagVc animated:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.textView becomeFirstResponder];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    self.addToolbar.tags = self.tags;
+}
+- (void)keyboardWillChangeFrame:(NSNotification *)note{
+//    NSLog(@"%@",note.userInfo);7
+    
+    self.addToolbar.transform = CGAffineTransformMakeTranslation(0, [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].origin.y - TAXScreenH);
+}
 
 - (void)cancel{
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//    self.textView.text = @"天神下凡";
-    self.textView.font = [UIFont systemFontOfSize:20];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)post{

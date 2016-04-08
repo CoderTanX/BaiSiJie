@@ -17,9 +17,7 @@
 @end
 @implementation TAXTopicVoiceView
 
-+ (instancetype)voiceView{
-    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
-}
+
 
 - (void)awakeFromNib{
     self.autoresizingMask = UIViewAutoresizingNone;

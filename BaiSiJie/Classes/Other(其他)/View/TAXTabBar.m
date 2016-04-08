@@ -45,10 +45,10 @@
 }
 
 - (void)publishBtClick{
-//    [TAXPublishView show];
-    TAXNavigationController *nav = [[TAXNavigationController alloc] initWithRootViewController:[[TAXPostWordViewController alloc]init]];
-    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
-    [root presentViewController:nav animated:YES completion:nil];
+    [TAXPublishView show];
+//    TAXNavigationController *nav = [[TAXNavigationController alloc] initWithRootViewController:[[TAXPostWordViewController alloc]init]];
+//    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
+//    [root presentViewController:nav animated:YES completion:nil];
 }
 
 

@@ -11,5 +11,4 @@
 @interface TAXTopicCell : UITableViewCell
 @property (nonatomic, strong) TAXTopic *topic; ///<段子模型
 
-+ (instancetype)topicCell;
 @end

@@ -18,9 +18,6 @@
 @end
 @implementation TAXTopicVideoView
 
-+ (instancetype)videoView{
-    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
-}
 
 - (void)awakeFromNib{
     self.autoresizingMask = UIViewAutoresizingNone;

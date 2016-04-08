@@ -91,8 +91,13 @@
     BOOL intersects = CGRectIntersectsRect(newF, windowF);
     return !self.isHidden && self.alpha > 0.01 && self.window == keyWindow &&intersects;
     
-    
-    
 }
+
++ (instancetype)viewFromXib{
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
+}
+
+
+
 
 @end

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 @class TAXTopic;
 @interface TAXTopicVideoView : UIView
-+ (instancetype)videoView;
+
 @property (nonatomic, strong) TAXTopic *topic; ///<帖子模型
 @end

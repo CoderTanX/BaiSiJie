@@ -11,5 +11,5 @@
 @class TAXTopic;
 @interface TAXTopicVoiceView : UIView
 @property (nonatomic, strong) TAXTopic *topic; ///<模型
-+ (instancetype)voiceView;
+
 @end

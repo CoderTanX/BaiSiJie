@@ -36,7 +36,7 @@
 - (TAXTopicPictureView *)pirtureView{
     
     if (!_pirtureView) {
-        TAXTopicPictureView *pirtureView = [TAXTopicPictureView pictureView];
+        TAXTopicPictureView *pirtureView = [TAXTopicPictureView viewFromXib];
         [self.contentView addSubview:pirtureView];
         _pirtureView = pirtureView;
     }
@@ -46,7 +46,7 @@
 - (TAXTopicVoiceView *)voiceView{
     
     if (!_voiceView) {
-        TAXTopicVoiceView *voiceView = [TAXTopicVoiceView voiceView];
+        TAXTopicVoiceView *voiceView = [TAXTopicVoiceView viewFromXib];
         [self.contentView addSubview:voiceView];
         _voiceView = voiceView;
     }
@@ -56,16 +56,14 @@
 - (TAXTopicVideoView *)videoView{
     
     if (!_videoView) {
-        TAXTopicVideoView *videoView = [TAXTopicVideoView videoView];
+        TAXTopicVideoView *videoView = [TAXTopicVideoView viewFromXib];
         [self.contentView addSubview:videoView];
         _videoView = videoView;
     }
     return _videoView;
 }
 
-+ (instancetype)topicCell{
-    return [[[NSBundle mainBundle]loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
-}
+
 
 
 - (void)awakeFromNib {
